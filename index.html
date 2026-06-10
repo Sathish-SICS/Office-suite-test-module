@@ -61,8 +61,7 @@ header .badge{font-size:12px;background:var(--accent);padding:4px 10px;border-ra
 .upload-box .title{font-size:13px;color:var(--muted);margin-bottom:6px}
 .upload-box .filename{font-size:14px;font-weight:600;color:var(--ink);word-break:break-all}
 .upload-box .hint{font-size:11px;color:var(--muted);margin-top:6px}
-.upload-box input[type=file]{opacity:0;position:absolute;width:0.1px;height:0.1px;overflow:hidden;z-index:-1}
-.upload-box{position:relative}
+.upload-box input{display:none}
 
 .btn{
   background:var(--accent);color:white;border:none;
@@ -440,286 +439,6 @@ header .badge{font-size:12px;background:var(--accent);padding:4px 10px;border-ra
 .btn-tiny:hover{background:#e2e8f0}
 .btn-tiny.danger{color:#b91c1c;border-color:#fca5a5}
 .btn-tiny.danger:hover{background:#fee2e2}
-
-/* PDL Sheet styles */
-/* PDL-specific styles */
-.pdl-hero {
-  background: linear-gradient(135deg, rgba(15,23,42,0.95) 0%, rgba(30,58,138,0.4) 50%, rgba(15,23,42,0.95) 100%);
-  border: 1px solid rgba(99,102,241,.3);
-  border-radius: 14px;
-  padding: 22px 28px;
-  margin-bottom: 18px;
-  position: relative;
-  overflow: hidden;
-}
-.pdl-hero::before {
-  content: '';
-  position: absolute;
-  top: -40px; right: -40px;
-  width: 160px; height: 160px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(99,102,241,.18) 0%, transparent 70%);
-  pointer-events: none;
-}
-.pdl-form-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 12px;
-  margin-bottom: 18px;
-}
-.pdl-form-card {
-  background: rgba(15,23,42,.6);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 14px;
-  cursor: pointer;
-  transition: border-color .2s, background .2s, transform .15s;
-  position: relative;
-  overflow: hidden;
-}
-.pdl-form-card:hover {
-  border-color: rgba(99,102,241,.6);
-  background: rgba(30,58,138,.25);
-  transform: translateY(-2px);
-}
-.pdl-form-card.active {
-  border-color: #6366f1;
-  background: rgba(99,102,241,.18);
-}
-.pdl-form-card.status-ready { border-left: 3px solid #34d399; }
-.pdl-form-card.status-partial { border-left: 3px solid #fbbf24; }
-.pdl-form-card.status-manual { border-left: 3px solid #94a3b8; }
-.pdl-form-card .form-num {
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #818cf8;
-  margin-bottom: 4px;
-}
-.pdl-form-card .form-title {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--ink);
-  line-height: 1.4;
-  margin-bottom: 6px;
-}
-.pdl-form-card .form-src {
-  font-size: 10px;
-  color: var(--muted);
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-.pdl-form-card .form-badge {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  font-size: 9px;
-  padding: 2px 6px;
-  border-radius: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-.badge-auto { background: rgba(52,211,153,.2); color: #34d399; }
-.badge-semi { background: rgba(251,191,36,.2); color: #fbbf24; }
-.badge-manual { background: rgba(148,163,184,.15); color: #94a3b8; }
-.pdl-panel {
-  background: rgba(15,23,42,.7);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 22px 24px;
-  margin-bottom: 14px;
-}
-.pdl-panel h3 {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--ink);
-  margin: 0 0 16px 0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.pdls-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 12px;
-}
-.pdls-table th {
-  background: rgba(30,58,138,.5);
-  color: #93c5fd;
-  padding: 8px 10px;
-  text-align: left;
-  border: 1px solid rgba(99,102,241,.2);
-  font-weight: 600;
-  font-size: 11px;
-}
-.pdls-table td {
-  padding: 7px 10px;
-  border: 1px solid rgba(255,255,255,.06);
-  color: var(--ink);
-  vertical-align: middle;
-}
-.pdls-table tr:nth-child(even) td { background: rgba(255,255,255,.02); }
-.pdls-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
-.pdls-table td.editable {
-  background: rgba(99,102,241,.08);
-}
-.pdls-table td.editable input {
-  background: transparent;
-  border: none;
-  color: #fcd34d;
-  width: 100%;
-  font-size: 12px;
-  outline: none;
-  text-align: right;
-  font-family: inherit;
-}
-.pdls-table td.editable input:focus {
-  background: rgba(99,102,241,.15);
-  border-radius: 3px;
-}
-.pdl-source-box {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(15,23,42,.5);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 10px 14px;
-  margin-bottom: 10px;
-}
-.pdl-source-label {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: .5px;
-  min-width: 90px;
-}
-.pdl-section-tabs {
-  display: flex;
-  gap: 6px;
-  margin-bottom: 16px;
-  flex-wrap: wrap;
-}
-.pdl-section-tab {
-  padding: 6px 14px;
-  font-size: 12px;
-  font-weight: 600;
-  border-radius: 20px;
-  border: 1px solid var(--border);
-  background: transparent;
-  color: var(--muted);
-  cursor: pointer;
-  transition: all .2s;
-}
-.pdl-section-tab.active {
-  background: rgba(99,102,241,.25);
-  border-color: #6366f1;
-  color: #a5b4fc;
-}
-.pdl-progress-bar {
-  height: 4px;
-  background: rgba(255,255,255,.08);
-  border-radius: 2px;
-  overflow: hidden;
-  margin-top: 6px;
-}
-.pdl-progress-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #6366f1, #34d399);
-  border-radius: 2px;
-  transition: width .5s ease;
-}
-.pdl-month-selector {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 18px;
-  flex-wrap: wrap;
-}
-.commodity-highlight { color: #fcd34d; font-weight: 700; }
-.pct-good { color: #34d399; }
-.pct-warn { color: #fbbf24; }
-.pdl-empty-state {
-  text-align: center;
-  padding: 40px 20px;
-  color: var(--muted);
-}
-.pdl-empty-state .icon { font-size: 40px; margin-bottom: 12px; }
-
-/* Basic Notes styles */
-.bn-hero {
-  background: linear-gradient(135deg, rgba(15,23,42,.95) 0%, rgba(15,52,38,.5) 50%, rgba(15,23,42,.95) 100%);
-  border: 1px solid rgba(52,211,153,.25);
-  border-radius: 14px;
-  padding: 22px 28px;
-  margin-bottom: 18px;
-  position: relative;
-  overflow: hidden;
-}
-.bn-section {
-  background: rgba(15,23,42,.65);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  margin-bottom: 14px;
-  overflow: hidden;
-}
-.bn-section-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 18px;
-  background: rgba(30,58,138,.3);
-  border-bottom: 1px solid var(--border);
-  cursor: pointer;
-  user-select: none;
-}
-.bn-section-header:hover { background: rgba(30,58,138,.5); }
-.bn-section-title {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--ink);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.bn-section-body { padding: 16px 18px; }
-.bn-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 12px;
-  margin-bottom: 8px;
-}
-.bn-table th {
-  background: rgba(30,58,138,.5);
-  color: #93c5fd;
-  padding: 7px 10px;
-  border: 1px solid rgba(99,102,241,.2);
-  font-weight: 600;
-  font-size: 11px;
-  text-align: center;
-}
-.bn-table th.left { text-align: left; }
-.bn-table td {
-  padding: 6px 10px;
-  border: 1px solid rgba(255,255,255,.06);
-  color: var(--ink);
-  vertical-align: middle;
-  text-align: center;
-}
-.bn-table td.left { text-align: left; }
-.bn-table tr:nth-child(even) td { background: rgba(255,255,255,.02); }
-.bn-table tr.total-row td { background: rgba(30,58,138,.35); font-weight: 700; color: #93c5fd; }
-.bn-data-val { color: #fcd34d; font-weight: 700; }
-.bn-live { color: #34d399; }
-.bn-warn { color: #fbbf24; }
-.bn-section-actions { display: flex; gap: 6px; align-items: center; }
-.bn-tag-live { font-size:9px;padding:2px 6px;border-radius:10px;background:rgba(52,211,153,.15);color:#34d399;border:1px solid rgba(52,211,153,.3);font-weight:700 }
-.bn-tag-manual { font-size:9px;padding:2px 6px;border-radius:10px;background:rgba(251,191,36,.15);color:#fbbf24;border:1px solid rgba(251,191,36,.3);font-weight:700 }
-.bn-edit { background:transparent;border:1px solid rgba(99,102,241,.3);color:#a5b4fc;padding:3px 8px;border-radius:4px;font-size:11px;cursor:pointer }
-.bn-edit:hover { background:rgba(99,102,241,.2); }
 </style>
 </head>
 <body>
@@ -794,7 +513,7 @@ function checkPinSession(){
   // Remember auth for 8 hours
   const saved = sessionStorage.getItem(PIN_SESSION_KEY);
   if(saved && (Date.now() - parseInt(saved)) < 8*60*60*1000){
-    const _ps=document.getElementById('pin-screen');_ps.style.display='none';_ps.style.pointerEvents='none';
+    document.getElementById('pin-screen').style.display = 'none';
   }
 }
 checkPinSession();
@@ -830,7 +549,7 @@ document.querySelectorAll('.pin-btn').forEach(btn=>{
     if(pinEntry.length === CORRECT_PIN.length){
       if(pinEntry === CORRECT_PIN){
         sessionStorage.setItem(PIN_SESSION_KEY, Date.now());
-        const _ps=document.getElementById('pin-screen');_ps.style.display='none';_ps.style.pointerEvents='none';
+        document.getElementById('pin-screen').style.display = 'none';
       } else {
         setTimeout(shakeError, 150);
       }
@@ -847,7 +566,7 @@ document.addEventListener('keydown', e=>{
       if(pinEntry.length === CORRECT_PIN.length){
         if(pinEntry === CORRECT_PIN){
           sessionStorage.setItem(PIN_SESSION_KEY, Date.now());
-          const _ps=document.getElementById('pin-screen');_ps.style.display='none';_ps.style.pointerEvents='none';
+          document.getElementById('pin-screen').style.display = 'none';
         } else { setTimeout(shakeError, 150); }
       }
     }
@@ -1003,7 +722,7 @@ document.addEventListener('keydown', e=>{
   <div class="upload-box" id="box-master" style="max-width:500px">
     <label for="file-master">
       <div class="title">🏪 Master FPS Shop List</div>
-      <div class="filename" id="name-master">Tap or click to upload</div>
+      <div class="filename" id="name-master">Drag & drop or click to upload</div>
       <div class="hint">Excel with columns: block, society, shop_code, shop_name, FT/PT</div>
     </label>
     <input type="file" id="file-master" accept=".xlsx,.xls">
@@ -1131,7 +850,7 @@ document.addEventListener('keydown', e=>{
   <div class="upload-box" id="box-pdl-mis" style="max-width:500px">
     <label for="file-pdl-mis">
       <div class="title">📥 MIS Inspection Report</div>
-      <div class="filename" id="name-pdl-mis">Tap or click to upload</div>
+      <div class="filename" id="name-pdl-mis">Drag & drop or click to upload</div>
       <div class="hint">From MIS Server (.xlsx)</div>
     </label>
     <input type="file" id="file-pdl-mis" accept=".xlsx,.xls">
@@ -1381,12 +1100,12 @@ document.addEventListener('keydown', e=>{
     <div>
       <div style="font-size:12px;font-weight:600;color:var(--muted);margin-bottom:6px">📊 Current File (required)</div>
       <div class="upload-box" id="box-ekyc" style="margin:0">
-        <label for="file-ekyc" style="display:block;cursor:pointer;width:100%;height:100%">
+        <label for="file-ekyc">
           <div class="title">TNPDS State e-KYC Excel</div>
-          <div class="filename" id="name-ekyc">Tap or click to upload</div>
+          <div class="filename" id="name-ekyc">Click or drag to upload</div>
           <div class="hint">File with "Shop Wise" tab — all districts</div>
         </label>
-        <input type="file" id="file-ekyc" accept=".xlsx,.xls,.xlsx" style="opacity:0;position:absolute;width:0.1px;height:0.1px;overflow:hidden">
+        <input type="file" id="file-ekyc" accept=".xlsx,.xls">
       </div>
       <div id="ekyc-load-status" style="font-size:11px;color:var(--muted);margin-top:4px"></div>
     </div>
@@ -1394,12 +1113,12 @@ document.addEventListener('keydown', e=>{
     <div>
       <div style="font-size:12px;font-weight:600;color:var(--muted);margin-bottom:6px">📊 Older File for Comparison <span style="font-weight:400;color:#64748b">(optional)</span></div>
       <div class="upload-box" id="box-ekyc-old" style="margin:0;border-color:rgba(245,158,11,.4)">
-        <label for="file-ekyc-old" style="display:block;cursor:pointer;width:100%;height:100%">
+        <label for="file-ekyc-old">
           <div class="title" style="color:#fcd34d">Older e-KYC Excel</div>
-          <div class="filename" id="name-ekyc-old">Tap or click to upload</div>
+          <div class="filename" id="name-ekyc-old">Click or drag to upload</div>
           <div class="hint">Previous file for progress comparison</div>
         </label>
-        <input type="file" id="file-ekyc-old" accept=".xlsx,.xls" style="opacity:0;position:absolute;width:0.1px;height:0.1px;overflow:hidden">
+        <input type="file" id="file-ekyc-old" accept=".xlsx,.xls">
       </div>
       <div id="ekyc-old-status" style="font-size:11px;color:var(--muted);margin-top:4px"></div>
     </div>
@@ -1412,7 +1131,7 @@ document.addEventListener('keydown', e=>{
       <label for="file-ekyc-map" style="cursor:pointer">
         <span style="font-size:11px;color:var(--muted)">Click to override with custom mapping file</span>
       </label>
-      <input type="file" id="file-ekyc-map" accept=".xlsx,.xls" style="opacity:0;position:absolute;width:0.1px;height:0.1px;overflow:hidden">
+      <input type="file" id="file-ekyc-map" accept=".xlsx,.xls">
     </div>
   </div>
   <div class="action-bar" id="ekyc-action-bar" style="display:none">
@@ -1428,6 +1147,214 @@ document.addEventListener('keydown', e=>{
 <div class="tab-content" id="tab-pdlsheet">
 
 <!-- PDL SHEET MODULE -->
+<style>
+/* PDL-specific styles */
+.pdl-hero {
+  background: linear-gradient(135deg, rgba(15,23,42,0.95) 0%, rgba(30,58,138,0.4) 50%, rgba(15,23,42,0.95) 100%);
+  border: 1px solid rgba(99,102,241,.3);
+  border-radius: 14px;
+  padding: 22px 28px;
+  margin-bottom: 18px;
+  position: relative;
+  overflow: hidden;
+}
+.pdl-hero::before {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99,102,241,.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.pdl-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.pdl-form-card {
+  background: rgba(15,23,42,.6);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  cursor: pointer;
+  transition: border-color .2s, background .2s, transform .15s;
+  position: relative;
+  overflow: hidden;
+}
+.pdl-form-card:hover {
+  border-color: rgba(99,102,241,.6);
+  background: rgba(30,58,138,.25);
+  transform: translateY(-2px);
+}
+.pdl-form-card.active {
+  border-color: #6366f1;
+  background: rgba(99,102,241,.18);
+}
+.pdl-form-card.status-ready { border-left: 3px solid #34d399; }
+.pdl-form-card.status-partial { border-left: 3px solid #fbbf24; }
+.pdl-form-card.status-manual { border-left: 3px solid #94a3b8; }
+.pdl-form-card .form-num {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #818cf8;
+  margin-bottom: 4px;
+}
+.pdl-form-card .form-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+.pdl-form-card .form-src {
+  font-size: 10px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.pdl-form-card .form-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 9px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.badge-auto { background: rgba(52,211,153,.2); color: #34d399; }
+.badge-semi { background: rgba(251,191,36,.2); color: #fbbf24; }
+.badge-manual { background: rgba(148,163,184,.15); color: #94a3b8; }
+.pdl-panel {
+  background: rgba(15,23,42,.7);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin-bottom: 14px;
+}
+.pdl-panel h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pdls-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.pdls-table th {
+  background: rgba(30,58,138,.5);
+  color: #93c5fd;
+  padding: 8px 10px;
+  text-align: left;
+  border: 1px solid rgba(99,102,241,.2);
+  font-weight: 600;
+  font-size: 11px;
+}
+.pdls-table td {
+  padding: 7px 10px;
+  border: 1px solid rgba(255,255,255,.06);
+  color: var(--ink);
+  vertical-align: middle;
+}
+.pdls-table tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+.pdls-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.pdls-table td.editable {
+  background: rgba(99,102,241,.08);
+}
+.pdls-table td.editable input {
+  background: transparent;
+  border: none;
+  color: #fcd34d;
+  width: 100%;
+  font-size: 12px;
+  outline: none;
+  text-align: right;
+  font-family: inherit;
+}
+.pdls-table td.editable input:focus {
+  background: rgba(99,102,241,.15);
+  border-radius: 3px;
+}
+.pdl-source-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15,23,42,.5);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+}
+.pdl-source-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  min-width: 90px;
+}
+.pdl-section-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.pdl-section-tab {
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all .2s;
+}
+.pdl-section-tab.active {
+  background: rgba(99,102,241,.25);
+  border-color: #6366f1;
+  color: #a5b4fc;
+}
+.pdl-progress-bar {
+  height: 4px;
+  background: rgba(255,255,255,.08);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+.pdl-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #34d399);
+  border-radius: 2px;
+  transition: width .5s ease;
+}
+.pdl-month-selector {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+.commodity-highlight { color: #fcd34d; font-weight: 700; }
+.pct-good { color: #34d399; }
+.pct-warn { color: #fbbf24; }
+.pdl-empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--muted);
+}
+.pdl-empty-state .icon { font-size: 40px; margin-bottom: 12px; }
+</style>
 
 <!-- TOP AREA: Month selector + overview -->
 <div class="pdl-hero">
@@ -1481,7 +1408,7 @@ document.addEventListener('keydown', e=>{
     Re-upload any time to replace with updated data.
   </div>
   <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-    <input type="file" id="pdl-basic-file" accept=".xlsx,.xls" style="opacity:0;position:absolute;width:0.1px;height:0.1px;overflow:hidden" onchange="pdlUploadBasicData(this)">
+    <input type="file" id="pdl-basic-file" accept=".xlsx,.xls" style="display:none" onchange="pdlUploadBasicData(this)">
     <div id="pdl-basic-box" onclick="document.getElementById('pdl-basic-file').click()"
       style="flex:1;min-width:240px;background:rgba(15,23,42,.5);border:2px dashed rgba(99,102,241,.4);border-radius:10px;padding:16px 20px;cursor:pointer;transition:border-color .2s;text-align:center"
       onmouseover="this.style.borderColor='rgba(99,102,241,.8)'" onmouseout="this.style.borderColor='rgba(99,102,241,.4)'">
@@ -1502,13 +1429,13 @@ document.addEventListener('keydown', e=>{
     From MIS Portal → copy-paste the card count summary into Excel with two sheets: <b style="color:#6ee7b7">Card Type Overview</b> and <b style="color:#6ee7b7">NFSA Details</b>. Re-upload anytime to update.
   </div>
   <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-    <input type="file" id="pdl-cards-file" accept=".xlsx,.xls" style="opacity:0;position:absolute;width:0.1px;height:0.1px;overflow:hidden" onchange="pdlUploadCards(this)">
-    <label for="pdl-cards-file"
+    <input type="file" id="pdl-cards-file" accept=".xlsx,.xls" style="display:none" onchange="pdlUploadCards(this)">
+    <div onclick="document.getElementById('pdl-cards-file').click()"
       style="flex:1;min-width:240px;background:rgba(15,23,42,.5);border:2px dashed rgba(52,211,153,.3);border-radius:10px;padding:16px 20px;cursor:pointer;transition:border-color .2s;text-align:center"
       onmouseover="this.style.borderColor='rgba(52,211,153,.7)'" onmouseout="this.style.borderColor='rgba(52,211,153,.3)'">
       <div id="pdl-cards-name" style="font-size:13px;color:var(--muted)">📁 Click to upload Cards Excel</div>
       <div id="pdl-cards-status" style="font-size:11px;color:#6ee7b7;margin-top:4px"></div>
-    </label>
+    </div>
     <div id="pdl-cards-summary" style="display:none;background:rgba(52,211,153,.06);border:1px solid rgba(52,211,153,.2);border-radius:8px;padding:12px 16px;font-size:12px;line-height:1.8"></div>
   </div>
 </div>
@@ -1524,11 +1451,11 @@ document.addEventListener('keydown', e=>{
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px" id="pdl-offtake-grid">
   </div>
   <div style="margin-top:10px">
-    <input type="file" id="pdl-offtake-file" accept=".xlsx,.xls" style="opacity:0;position:absolute;width:0.1px;height:0.1px;overflow:hidden" multiple onchange="pdlUploadOfftakeMultiple(this)">
-    <label for="pdl-offtake-file" class="btn" style="font-size:12px;padding:8px 18px;cursor:pointer;display:inline-flex;align-items:center;gap:4px">
+    <input type="file" id="pdl-offtake-file" accept=".xlsx,.xls" style="display:none" multiple onchange="pdlUploadOfftakeMultiple(this)">
+    <button class="btn" onclick="document.getElementById('pdl-offtake-file').click()" style="font-size:12px;padding:8px 18px">
       📂 Upload Offtake File(s)
-    </label>
-    <span style="font-size:11px;color:var(--muted);margin-left:10px">Select one or multiple files — a commodity assignment dialog will appear</span>
+    </button>
+    <span style="font-size:11px;color:var(--muted);margin-left:10px">Select one or multiple files — commodity auto-detected from each file header</span>
   </div>
 </div>
 
@@ -1545,6 +1472,78 @@ document.addEventListener('keydown', e=>{
 <!-- BASIC NOTES TAB                                           -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-content" id="tab-notes">
+<style>
+.bn-hero {
+  background: linear-gradient(135deg, rgba(15,23,42,.95) 0%, rgba(15,52,38,.5) 50%, rgba(15,23,42,.95) 100%);
+  border: 1px solid rgba(52,211,153,.25);
+  border-radius: 14px;
+  padding: 22px 28px;
+  margin-bottom: 18px;
+  position: relative;
+  overflow: hidden;
+}
+.bn-section {
+  background: rgba(15,23,42,.65);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+.bn-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: rgba(30,58,138,.3);
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  user-select: none;
+}
+.bn-section-header:hover { background: rgba(30,58,138,.5); }
+.bn-section-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.bn-section-body { padding: 16px 18px; }
+.bn-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.bn-table th {
+  background: rgba(30,58,138,.5);
+  color: #93c5fd;
+  padding: 7px 10px;
+  border: 1px solid rgba(99,102,241,.2);
+  font-weight: 600;
+  font-size: 11px;
+  text-align: center;
+}
+.bn-table th.left { text-align: left; }
+.bn-table td {
+  padding: 6px 10px;
+  border: 1px solid rgba(255,255,255,.06);
+  color: var(--ink);
+  vertical-align: middle;
+  text-align: center;
+}
+.bn-table td.left { text-align: left; }
+.bn-table tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+.bn-table tr.total-row td { background: rgba(30,58,138,.35); font-weight: 700; color: #93c5fd; }
+.bn-data-val { color: #fcd34d; font-weight: 700; }
+.bn-live { color: #34d399; }
+.bn-warn { color: #fbbf24; }
+.bn-section-actions { display: flex; gap: 6px; align-items: center; }
+.bn-tag-live { font-size:9px;padding:2px 6px;border-radius:10px;background:rgba(52,211,153,.15);color:#34d399;border:1px solid rgba(52,211,153,.3);font-weight:700 }
+.bn-tag-manual { font-size:9px;padding:2px 6px;border-radius:10px;background:rgba(251,191,36,.15);color:#fbbf24;border:1px solid rgba(251,191,36,.3);font-weight:700 }
+.bn-edit { background:transparent;border:1px solid rgba(99,102,241,.3);color:#a5b4fc;padding:3px 8px;border-radius:4px;font-size:11px;cursor:pointer }
+.bn-edit:hover { background:rgba(99,102,241,.2); }
+</style>
 
 <!-- HERO -->
 <div class="bn-hero">
@@ -1726,19 +1725,11 @@ function toast(msg, isErr){
 // Tabs
 document.querySelectorAll('.tab').forEach(tab=>{
   tab.addEventListener('click',()=>{
-    if(tab.dataset.tab==='future') return;
+    if(tab.dataset.tab==='future') return; // legacy guard
     document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(t=>{
-      t.classList.remove('active');
-      t.style.display='';  // clear any inline style overrides
-    });
+    document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
     tab.classList.add('active');
-    const tc = document.getElementById('tab-'+tab.dataset.tab);
-    if(tc){
-      tc.classList.add('active');
-      tc.style.display='block';  // force visible even if CSS fails
-      window.scrollTo(0,0);
-    }
+    document.getElementById('tab-'+tab.dataset.tab).classList.add('active');
   });
 });
 
@@ -2721,7 +2712,7 @@ function printDetailPdf(cardId){
     tr:nth-child(even) { background:#f8fafc; }
   </style></head><body>
   ${pageHtml}
-  <script>window.onload=()=>{window.print();}<' + '/script>
+  <script>window.onload=()=>{window.print();}<\/script>
   </body></html>`);
   printWin.document.close();
 }
@@ -3218,240 +3209,61 @@ async function downloadCard(id,filename){
 // ============================================================
 // EXCEL EXPORT (3 sheets)
 // ============================================================
-// ── TVM Shared Excel Style Helpers (ExcelJS) ──────────────────────────────
-const tvmStyle = {
-  // Color palette
-  C: {
-    teal:     '005C5C', // dark teal — title/group headers
-    tealMid:  '007A7A', // mid teal — sub-headers
-    tealLight:'E0F2F1', // light teal — alternate rows / total rows
-    green:    '1B5E20', // dark green — grand total bg
-    greenText:'FFFFFF',
-    amber:    'FFF3E0', // low % highlight
-    red:      'FFEBEE', // very low %
-    white:    'FFFFFF',
-    black:    '000000',
-    gray:     'F5F5F5', // alternate rows
-    grayDark: '78909C', // muted text
-  },
-  // Font presets
-  font(bold=false, size=10, color='000000', name='Arial'){
-    return {name, size, bold, color:{argb:'FF'+color}};
-  },
-  // Fill preset
-  fill(hex){
-    return {type:'pattern', pattern:'solid', fgColor:{argb:'FF'+hex}};
-  },
-  // Thin border all sides
-  border(color='AAAAAA'){
-    const s={style:'thin',color:{argb:'FF'+color}};
-    return {top:s,bottom:s,left:s,right:s};
-  },
-  // Medium border (for group separators)
-  borderMed(){
-    const m={style:'medium',color:{argb:'FF005C5C'}};
-    const t={style:'thin',color:{argb:'FFAAAAAA'}};
-    return {top:m,bottom:m,left:m,right:t};
-  },
-  // Center alignment
-  center(wrap=false){ return {horizontal:'center',vertical:'middle',wrapText:wrap}; },
-  left(wrap=true){ return {horizontal:'left',vertical:'middle',wrapText:wrap}; },
-  right(){ return {horizontal:'right',vertical:'middle'}; },
-
-  // Apply title row (merged, teal bg, white bold)
-  titleRow(ws, text, cols, rowNum=1, height=28){
-    const row = ws.getRow(rowNum);
-    row.height = height;
-    const cell = row.getCell(1);
-    cell.value = text;
-    cell.font = tvmStyle.font(true,13,'FFFFFF');
-    cell.fill = tvmStyle.fill(tvmStyle.C.teal);
-    cell.alignment = tvmStyle.center();
-    cell.border = tvmStyle.border('005C5C');
-    ws.mergeCells(rowNum,1,rowNum,cols);
-  },
-
-  // Apply sub-title row (merged, tealMid bg)
-  subTitleRow(ws, text, cols, rowNum, height=20){
-    const row = ws.getRow(rowNum);
-    row.height = height;
-    const cell = row.getCell(1);
-    cell.value = text;
-    cell.font = tvmStyle.font(true,10,'FFFFFF');
-    cell.fill = tvmStyle.fill(tvmStyle.C.tealMid);
-    cell.alignment = tvmStyle.center();
-    cell.border = tvmStyle.border('005C5C');
-    ws.mergeCells(rowNum,1,rowNum,cols);
-  },
-
-  // Apply header row (teal bg, white bold, center)
-  headerRow(ws, headers, rowNum, height=18){
-    const row = ws.getRow(rowNum);
-    row.height = height;
-    headers.forEach((h,i)=>{
-      const cell = row.getCell(i+1);
-      cell.value = h;
-      cell.font = tvmStyle.font(true,10,'FFFFFF');
-      cell.fill = tvmStyle.fill(tvmStyle.C.tealMid);
-      cell.alignment = tvmStyle.center(true);
-      cell.border = tvmStyle.border('005C5C');
-    });
-  },
-
-  // Apply data row
-  dataRow(ws, values, rowNum, altRow=false, boldRow=false, fillHex=null){
-    const row = ws.getRow(rowNum);
-    row.height = 16;
-    const bg = fillHex || (boldRow ? tvmStyle.C.tealLight : (altRow ? tvmStyle.C.gray : tvmStyle.C.white));
-    values.forEach((v,i)=>{
-      const cell = row.getCell(i+1);
-      cell.value = v;
-      cell.font = tvmStyle.font(boldRow,10,'000000');
-      cell.fill = tvmStyle.fill(bg);
-      cell.border = tvmStyle.border();
-      cell.alignment = (i===0||typeof v==='number') ? tvmStyle.center() : tvmStyle.left(false);
-    });
-  },
-
-  // Apply percent-colored cell (green/amber/red based on value)
-  pctCell(ws, rowNum, colNum, pctStr){
-    const cell = ws.getRow(rowNum).getCell(colNum);
-    const val = parseFloat(pctStr);
-    if(!isNaN(val)){
-      const hex = val>=90?'C8E6C9': val>=75?'FFF9C4': val>=50?'FFE0B2':'FFCDD2';
-      cell.fill = tvmStyle.fill(hex);
-      cell.font = tvmStyle.font(true,10, val>=90?'1B5E20': val>=75?'827717': val>=50?'E65100':'B71C1C');
-    }
-  },
-
-  // Total/grand row (green bg, white bold)
-  totalRow(ws, values, rowNum, height=18){
-    const row = ws.getRow(rowNum);
-    row.height = height;
-    values.forEach((v,i)=>{
-      const cell = row.getCell(i+1);
-      cell.value = v;
-      cell.font = tvmStyle.font(true,10,'FFFFFF');
-      cell.fill = tvmStyle.fill(tvmStyle.C.green);
-      cell.border = tvmStyle.border('1B5E20');
-      cell.alignment = tvmStyle.center();
-    });
-  },
-
-  // Lazy-load ExcelJS on first use (keeps page load fast, works offline until download)
-  async ensureExcelJS(){
-    if(typeof ExcelJS !== 'undefined') return;
-    toast('⏳ Loading Excel engine...');
-    await new Promise((resolve, reject)=>{
-      const s = document.createElement('script');
-      s.src = 'https://unpkg.com/exceljs@4.4.0/dist/exceljs.min.js';
-      s.onload = resolve;
-      s.onerror = ()=> reject(new Error('ExcelJS failed to load — check internet connection'));
-      document.head.appendChild(s);
-    });
-  },
-
-  // Save ExcelJS workbook as download
-  async save(wb, fname){
-    const buf = await wb.xlsx.writeBuffer();
-    const blob = new Blob([buf],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href=url; a.download=fname; a.click();
-    URL.revokeObjectURL(url);
-  }
-};
-// ── END tvmStyle ───────────────────────────────────────────────────────────
-
-async function downloadExcel(){
-  await tvmStyle.ensureExcelJS();
+function downloadExcel(){
   const r = state.results;
   if(!r) return;
   const month = getMonthLabel();
-  const DISTRICT = 'திருவண்ணாமலை மாவட்டம்';
-  const wb = new ExcelJS.Workbook();
-  wb.creator = 'TVM Office Suite';
-  wb.created = new Date();
 
-  // ── Sheet 1: Block Officer ──────────────────────────────────────────────
-  const ws1 = wb.addWorksheet('Block Officer');
-  ws1.columns = [
-    {width:7},{width:30},{width:18},{width:12},{width:12}
+  const wb = XLSX.utils.book_new();
+
+  // ----- Sheet 1: Block Officer (matches existing template) -----
+  const bsRows = [
+    [],
+    ['Sl. No.','ஒன்றியம் அலுவலர்கள்','ஆய்வு செய்யப்பட்ட கடைகளின் எண்ணிக்கை','இலக்கு','நிலுவை']
   ];
-  // Title
-  tvmStyle.titleRow(ws1,
-    `${DISTRICT} — ஒன்றிய அலுவலர்கள் ஆய்வு அறிக்கை — ${month}`,
-    5, 1, 30);
-  // Header
-  tvmStyle.headerRow(ws1,
-    ['வ.எண்','ஒன்றியம் / அலுவலர்','ஆய்வு செய்யப்பட்டவை','இலக்கு','நிலுவை'],
-    2, 20);
-  // Data rows
-  let row = 3;
   r.blockStaffList.forEach((b,i)=>{
-    const pending = (b.target||45) - (b.count||0);
-    tvmStyle.dataRow(ws1,
-      [i+1, b.name||b.designation||'', b.count||0, b.target||45, pending],
-      row, i%2===1);
-    // Color pending cell
-    const pendCell = ws1.getRow(row).getCell(5);
-    if(pending > 10){ pendCell.fill = tvmStyle.fill('FFCDD2'); pendCell.font = tvmStyle.font(true,10,'B71C1C'); }
-    else if(pending > 0){ pendCell.fill = tvmStyle.fill('FFF9C4'); pendCell.font = tvmStyle.font(true,10,'827717'); }
-    row++;
+    bsRows.push([i+1, b.name, b.count, b.target, b.pending]);
   });
-  // Grand Total
-  const grandTotal   = r.blockStaffList.reduce((s,b)=>s+(b.count||0),0);
-  const grandTarget  = r.blockStaffList.length * 45;
-  const grandPending = grandTarget - grandTotal;
-  tvmStyle.totalRow(ws1,
-    ['','மொத்தம்', grandTotal, grandTarget, grandPending], row);
-  ws1.getRow(row).height = 20;
+  const grandTotal = r.blockStaffList.reduce((s,b)=>s+b.count,0);
+  const grandPending = r.blockStaffList.reduce((s,b)=>s+b.pending,0);
+  bsRows.push(['','Grand Total',grandTotal,r.blockStaffList.length*45,grandPending]);
+  const ws1 = XLSX.utils.aoa_to_sheet(bsRows);
+  ws1['!cols'] = [{wch:8},{wch:24},{wch:36},{wch:10},{wch:10}];
+  XLSX.utils.book_append_sheet(wb,ws1,'Block Officer');
 
-  // ── Sheet 2: Deputy Registrar ───────────────────────────────────────────
-  const ws2 = wb.addWorksheet('Deputy Registrar');
-  ws2.columns = [{width:6},{width:14},{width:22},{width:35},{width:20},{width:16}];
+  // ----- Sheet 2: Deputy Registrar -----
   const drDesig = r.drInspections[0]?.designation || 'துணைப்பதிவாளர் (பொவிதி)';
-  tvmStyle.titleRow(ws2,
-    `${drDesig} அவர்களின் ${month} மாத ஆய்வு அறிக்கை — ${DISTRICT}`,
-    6, 1, 28);
-  tvmStyle.headerRow(ws2,
-    ['#','FPS Code','Block','FPS Name','Date of Inspection','Remarks'],
-    2, 20);
-  row = 3;
+  const drRows = [
+    [`${drDesig}  அவர்களின் ${month} மாதத்திற்கான ஆய்வு அறிக்கை விவரம்`],
+    ['#','FPS Code','Block','FPS Name','Date of Inspection','Remarks']
+  ];
   r.drInspections.forEach((d,i)=>{
-    tvmStyle.dataRow(ws2,
-      [i+1, d.fpsCode, d.block, d.fpsName, fmtDate(d.date), ''],
-      row, i%2===1);
-    row++;
+    drRows.push([i+1, d.fpsCode, d.block, d.fpsName, fmtDate(d.date), '']);
   });
-  tvmStyle.totalRow(ws2,
-    ['','மொத்தம் — '+r.drInspections.length+' கடைகள்','','','',''],
-    row);
+  const ws2 = XLSX.utils.aoa_to_sheet(drRows);
+  ws2['!cols'] = [{wch:5},{wch:14},{wch:20},{wch:28},{wch:18},{wch:14}];
+  if(!ws2['!merges']) ws2['!merges'] = [];
+  ws2['!merges'].push({s:{r:0,c:0},e:{r:0,c:5}});
+  XLSX.utils.book_append_sheet(wb,ws2,'Deputy Registrar');
 
-  // ── Sheet 3: Joint Registrar ────────────────────────────────────────────
-  const ws3 = wb.addWorksheet('Joint Registrar');
-  ws3.columns = [{width:6},{width:14},{width:22},{width:35},{width:20},{width:16}];
+  // ----- Sheet 3: Joint Registrar -----
   const jrDesig = r.jrInspections[0]?.designation || 'இணைப்பதிவாளர்';
-  tvmStyle.titleRow(ws3,
-    `${jrDesig} அவர்களின் ${month} மாத ஆய்வு அறிக்கை — ${DISTRICT}`,
-    6, 1, 28);
-  tvmStyle.headerRow(ws3,
-    ['#','FPS Code','Block','FPS Name','Date of Inspection','Remarks'],
-    2, 20);
-  row = 3;
+  const jrRows = [
+    [`${jrDesig}  அவர்களின் ${month} மாதத்திற்கான ஆய்வு அறிக்கை விவரம்`],
+    ['#','FPS Code','Block','FPS Name','Date of Inspection','Remarks']
+  ];
   r.jrInspections.forEach((d,i)=>{
-    tvmStyle.dataRow(ws3,
-      [i+1, d.fpsCode, d.block, d.fpsName, fmtDate(d.date), ''],
-      row, i%2===1);
-    row++;
+    jrRows.push([i+1, d.fpsCode, d.block, d.fpsName, fmtDate(d.date), '']);
   });
-  tvmStyle.totalRow(ws3,
-    ['','மொத்தம் — '+r.jrInspections.length+' கடைகள்','','','',''],
-    row);
+  const ws3 = XLSX.utils.aoa_to_sheet(jrRows);
+  ws3['!cols'] = [{wch:5},{wch:14},{wch:20},{wch:28},{wch:18},{wch:14}];
+  if(!ws3['!merges']) ws3['!merges'] = [];
+  ws3['!merges'].push({s:{r:0,c:0},e:{r:0,c:5}});
+  XLSX.utils.book_append_sheet(wb,ws3,'Joint Registrar');
 
-  const fname = `Inspection_Report_${month.replace(' ','_')}_TVM.xlsx`;
-  await tvmStyle.save(wb, fname);
-  toast('✓ Excel downloaded — Professional format');
+  const fname = `Inspection_Report_${month.replace(' ','_')}.xlsx`;
+  XLSX.writeFile(wb, fname);
+  toast('✓ Excel downloaded');
 }
 
 // Auto-load embedded shop map fallback (small CSV could be added if needed)
@@ -6228,7 +6040,6 @@ const BUILT_IN_SHOP_BLOCK = {
 "05FB005PN":"Cheyyar",
 "05FB006PN":"Cheyyar",
 "05FB007PN":"Cheyyar",
-"05FB008PN":"Cheyyar",
 "05FC001PN":"Cheyyar",
 "05FC002PN":"Cheyyar",
 "05FP001PN":"Cheyyar",
@@ -6506,7 +6317,6 @@ const BUILT_IN_SHOP_BLOCK = {
 "05HO003P1":"Jamunamarathur",
 "05HO003PY":"Jamunamarathur",
 "05HO007PN":"Jamunamarathur",
-"05HO008PN":"Jamunamarathur",
 "05HP061P1":"Kalasapakkam",
 "05HP061PY":"Kalasapakkam",
 "05HP062PN":"Kalasapakkam",
@@ -6970,45 +6780,45 @@ async function copyEkycTableImg(wrapId){
 }
 
 function ekycSetup(){
-  // Mobile-safe: labels with for= handle click natively. Don't add box.click() listeners.
-  const file = document.getElementById('file-ekyc');
-  const fileO = document.getElementById('file-ekyc-old');
+  // Current file
   const box = document.getElementById('box-ekyc');
+  const file = document.getElementById('file-ekyc');
+  if(!box||!file) return;
+  box.addEventListener('click', ()=>file.click());
+  box.addEventListener('dragover', e=>{e.preventDefault();box.style.borderColor='#3b82f6'});
+  box.addEventListener('dragleave', ()=>box.style.borderColor='var(--border)');
+  box.addEventListener('drop', e=>{e.preventDefault();box.style.borderColor='var(--border)';if(e.dataTransfer.files[0])handleEkycFile(e.dataTransfer.files[0],'current');});
+  file.addEventListener('change', e=>{if(e.target.files[0])handleEkycFile(e.target.files[0],'current');});
+  // Old file
   const boxO = document.getElementById('box-ekyc-old');
-  if(!file||!box) return;
-  // Desktop drag-drop only
-  if(!('ontouchstart' in window)){
-    box.addEventListener('dragover',e=>{e.preventDefault();box.style.borderColor='#3b82f6';});
-    box.addEventListener('dragleave',()=>box.style.borderColor='var(--border)');
-    box.addEventListener('drop',e=>{e.preventDefault();box.style.borderColor='var(--border)';if(e.dataTransfer.files[0])handleEkycFile(e.dataTransfer.files[0],'current');});
-    boxO.addEventListener('dragover',e=>{e.preventDefault();boxO.style.borderColor='#f59e0b';});
-    boxO.addEventListener('dragleave',()=>boxO.style.borderColor='rgba(245,158,11,.4)');
-    boxO.addEventListener('drop',e=>{e.preventDefault();boxO.style.borderColor='rgba(245,158,11,.4)';if(e.dataTransfer.files[0])handleEkycFile(e.dataTransfer.files[0],'old');});
-  }
-  file.addEventListener('change', e=>{if(e.target.files[0])handleEkycFile(e.target.files[0],'current');e.target.value='';});
-  fileO.addEventListener('change', e=>{if(e.target.files[0])handleEkycFile(e.target.files[0],'old');e.target.value='';});
+  const fileO = document.getElementById('file-ekyc-old');
+  boxO.addEventListener('click', ()=>fileO.click());
+  boxO.addEventListener('dragover', e=>{e.preventDefault();boxO.style.borderColor='#f59e0b'});
+  boxO.addEventListener('dragleave', ()=>boxO.style.borderColor='rgba(245,158,11,.4)');
+  boxO.addEventListener('drop', e=>{e.preventDefault();boxO.style.borderColor='rgba(245,158,11,.4)';if(e.dataTransfer.files[0])handleEkycFile(e.dataTransfer.files[0],'old');});
+  fileO.addEventListener('change', e=>{if(e.target.files[0])handleEkycFile(e.target.files[0],'old');});
+  // Custom map
   const fileM = document.getElementById('file-ekyc-map');
   fileM.addEventListener('change', async e=>{
     if(!e.target.files[0]) return;
-    try{
-      const wb2 = await readExcel(e.target.files[0]);
-      const ws = wb2.Sheets[wb2.SheetNames[0]];
-      const rows = XLSX.utils.sheet_to_json(ws);
-      ekyc.customShopMap = {};
-      rows.forEach(r=>{
-        const code = String(r.Shop_Code||r.shop_code||r['Shop Code']||r.Shopcode||'').trim();
-        const block = String(r.Block||r.block||'').trim();
-        if(code&&block) ekyc.customShopMap[code]=block;
-      });
-      document.getElementById('ekyc-map-status').textContent=`✓ Custom map loaded (${Object.keys(ekyc.customShopMap).length} entries)`;
-      document.getElementById('ekyc-map-status').style.color='#fcd34d';
-      toast('Custom shop map loaded');
-    }catch(err){ toast('Map load failed: '+err.message,true); }
-    e.target.value='';
+    const buf = await e.target.files[0].arrayBuffer();
+    const wb2 = XLSX.read(buf,{type:'array'});
+    const ws = wb2.Sheets[wb2.SheetNames[0]];
+    const rows = XLSX.utils.sheet_to_json(ws);
+    ekyc.customShopMap = {};
+    rows.forEach(r=>{
+      const code = String(r.Shop_Code||r.shop_code||r['Shop Code']||r.Shopcode||'').trim();
+      const block = String(r.Block||r.block||'').trim();
+      if(code&&block) ekyc.customShopMap[code]=block;
+    });
+    document.getElementById('ekyc-map-status').textContent = `✓ Custom map loaded (${Object.keys(ekyc.customShopMap).length} entries)`;
+    document.getElementById('ekyc-map-status').style.color='#fcd34d';
+    toast('Custom shop map loaded');
   });
   document.getElementById('btn-ekyc-generate').addEventListener('click', generateEkycReport);
   document.getElementById('btn-ekyc-reset').addEventListener('click', resetEkyc);
 }
+
 function resetEkyc(){
   ekyc.data=null; ekyc.oldData=null; ekyc.date=''; ekyc.oldDate=''; ekyc.filter={active:false};
   ['name-ekyc','name-ekyc-old'].forEach(id=>document.getElementById(id).textContent='Click or drag to upload');
@@ -7025,7 +6835,8 @@ async function handleEkycFile(file, which){
   nameEl.textContent = file.name;
   statEl.textContent = '⏳ Reading...';
   try{
-    const wb = await readExcel(file); // uses FileReader (mobile-compatible)
+    const buf = await file.arrayBuffer();
+    const wb = XLSX.read(buf,{type:'array'});
     const shopSheet = wb.SheetNames.find(s=>s.toLowerCase().includes('shop')&&s.toLowerCase().includes('wise'));
     if(!shopSheet) throw new Error('"Shop Wise" sheet not found. Sheets: '+wb.SheetNames.join(', '));
     const ws = wb.Sheets[shopSheet];
@@ -7067,9 +6878,9 @@ function pctGradient(p){
   const lum=0.299*r+0.587*g+0.114*b;
   return {bg:`rgba(${r},${g},${b},0.25)`,fg:lum>130?'#1e293b':'#1e293b',solid:`rgb(${r},${g},${b})`};
 }
-function pctCell(p,extraStyle='',extraClass=''){
+function pctCell(p,extraStyle=''){
   const c=pctGradient(p);
-  return `<td style="padding:6px 4px;border:1px solid #e2e8f0;text-align:center;font-weight:700;background:${c.bg};color:${c.fg};${extraStyle}" class="${extraClass}">${fmtPct(p)}</td>`;
+  return `<td style="padding:6px 4px;border:1px solid #e2e8f0;text-align:center;font-weight:700;background:${c.bg};color:${c.fg};${extraStyle}">${fmtPct(p)}</td>`;
 }
 function fmtPct(p){return p===null||p===undefined||isNaN(p)?'—':(p*100).toFixed(2)+'%';}
 function fmtN(n){return n===null||isNaN(n)?'—':n.toLocaleString('en-IN');}
@@ -7148,11 +6959,6 @@ function renderEkycResults(rows,blocks,oldRows,oldBlocks){
     <div style="display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap">
       ${catDefs.map(c=>`<button class="btn-tiny ekyc-cat-btn" id="ekyc-tab-${c.k}" onclick="switchEkycTab('${c.k}')">${c.label}</button>`).join('')}
       <button class="btn-tiny ekyc-cat-btn" id="ekyc-tab-shop" onclick="switchEkycTab('shop')">🏪 Shop-wise</button>
-      <span style="margin-left:8px;border-left:1px solid var(--border);padding-left:8px;display:flex;gap:5px;align-items:center">
-        <button class="btn-tiny" id="ekyc-global-copy" onclick="ekycGlobalCopy()" title="Screenshot active tab">📸</button>
-        <button class="btn-tiny" id="ekyc-global-excel" onclick="ekycGlobalExcel()" title="Download Excel for active tab">📥</button>
-        <button class="btn-tiny" id="ekyc-global-print" onclick="ekycGlobalPrint()" title="Print active tab">🖨️</button>
-      </span>
     </div>
     <!-- Filter Panel -->
     <div id="ekyc-filter-panel" style="background:rgba(15,23,42,.5);border:1px solid rgba(99,102,241,.35);border-radius:8px;padding:10px 14px;margin-bottom:12px">
@@ -7218,69 +7024,30 @@ function renderEkycResults(rows,blocks,oldRows,oldBlocks){
           <button class="btn-tiny" id="blk-sort-pend-${cat.k}" onclick="ekycBlockSetSort('${cat.k}','pend')" style="${ekyc[catSortKey].col==='pend'?'background:#1e3a8a;color:white':''}">Pending ${ekyc[catSortKey].col==='pend'?(ekyc[catSortKey].dir==='desc'?'▼':'▲'):'⇅'}</button>
           <button class="btn-tiny" id="blk-sort-pct-${cat.k}" onclick="ekycBlockSetSort('${cat.k}','pct')" style="${ekyc[catSortKey].col==='pct'?'background:#1e3a8a;color:white':''}">% ${ekyc[catSortKey].col==='pct'?(ekyc[catSortKey].dir==='desc'?'▼':'▲'):'⇅'}</button>
           ${hasComp?`<button class="btn-tiny" id="blk-sort-added-${cat.k}" onclick="ekycBlockSetSort('${cat.k}','added')" style="${ekyc[catSortKey].col==='added'?'background:#059669;color:white':''}">Added ${ekyc[catSortKey].col==='added'?(ekyc[catSortKey].dir==='desc'?'▼':'▲'):'⇅'}</button>`:''}
-          <button class="btn-tiny" onclick="showEkycColToggle('${cat.k}')" title="Choose visible columns" style="background:rgba(124,58,237,.2);border-color:rgba(124,58,237,.5);color:#c4b5fd">☰ Columns</button>
           <button class="btn-tiny" onclick="copyEkycTableImg('ekyc-block-tbl-${cat.k}-wrap')">📸 Copy</button>
           <button class="btn-tiny" onclick="downloadEkycExcel()">📥 Excel</button>
-          <button class="btn-tiny" onclick="showEkycBlockPrintDialog('${cat.k}')">🖨️ Print</button>
+          <button class="btn-tiny" onclick="printEkycBlockAbstract('${cat.k}')">🖨️ Print</button>
         </div>
       </div>
-      <!-- Column toggle panel (hidden by default) -->
-      <div id="ekyc-col-toggle-${cat.k}" style="display:none;background:rgba(15,23,42,.7);border:1px solid rgba(124,58,237,.35);border-radius:8px;padding:10px 14px;margin-bottom:10px">
-        <div style="font-size:11px;font-weight:700;color:#c4b5fd;margin-bottom:8px">☰ Column Visibility</div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;font-size:12px">
-          ${cat.k==='all'?`
-          <div style="border-right:1px solid var(--border);padding-right:12px">
-            <div style="font-size:10px;color:var(--muted);margin-bottom:4px;font-weight:700">AAY</div>
-            ${['cons','done','pend','pct'].map(c2=>`<label style="display:flex;align-items:center;gap:4px;cursor:pointer;margin-bottom:2px"><input type="checkbox" checked onchange="ekycToggleCol('${cat.k}','aay_${c2}',this.checked)"> ${c2==='cons'?'Considered':c2==='done'?'Completed':c2==='pend'?'Pending':'%'}</label>`).join('')}
-          </div>
-          <div style="border-right:1px solid var(--border);padding-right:12px">
-            <div style="font-size:10px;color:var(--muted);margin-bottom:4px;font-weight:700">PHH</div>
-            ${['cons','done','pend','pct'].map(c2=>`<label style="display:flex;align-items:center;gap:4px;cursor:pointer;margin-bottom:2px"><input type="checkbox" checked onchange="ekycToggleCol('${cat.k}','phh_${c2}',this.checked)"> ${c2==='cons'?'Considered':c2==='done'?'Completed':c2==='pend'?'Pending':'%'}</label>`).join('')}
-          </div>
-          <div style="border-right:1px solid var(--border);padding-right:12px">
-            <div style="font-size:10px;color:var(--muted);margin-bottom:4px;font-weight:700">NPHH</div>
-            ${['cons','done','pend','pct'].map(c2=>`<label style="display:flex;align-items:center;gap:4px;cursor:pointer;margin-bottom:2px"><input type="checkbox" checked onchange="ekycToggleCol('${cat.k}','nph_${c2}',this.checked)"> ${c2==='cons'?'Considered':c2==='done'?'Completed':c2==='pend'?'Pending':'%'}</label>`).join('')}
-          </div>
-          `:''}
-          <div>
-            <div style="font-size:10px;color:var(--muted);margin-bottom:4px;font-weight:700">Overall</div>
-            ${['cons','done','pend','pct'].map(c2=>`<label style="display:flex;align-items:center;gap:4px;cursor:pointer;margin-bottom:2px"><input type="checkbox" checked onchange="ekycToggleCol('${cat.k}','tot_${c2}',this.checked)"> ${c2==='cons'?'Considered':c2==='done'?'Completed':c2==='pend'?'Pending':'%'}</label>`).join('')}
-            ${hasComp?`<label style="display:flex;align-items:center;gap:4px;cursor:pointer;margin-bottom:2px"><input type="checkbox" checked onchange="ekycToggleCol('${cat.k}','old_pct',this.checked)"> Old %</label>`:''}
-            ${hasComp?`<label style="display:flex;align-items:center;gap:4px;cursor:pointer;margin-bottom:2px"><input type="checkbox" checked onchange="ekycToggleCol('${cat.k}','added',this.checked)"> Added</label>`:''}
-          </div>
-        </div>
-      </div>      </div>
       <div style="overflow-x:auto;background:white;border-radius:8px;border:1px solid #cbd5e1;color:#1e293b;margin-bottom:14px" id="ekyc-block-tbl-${cat.k}-wrap">
-        <table style="width:100%;border-collapse:collapse;font-size:12px" id="ekyc-blk-tbl-${cat.k}">
+        <table style="width:100%;border-collapse:collapse;font-size:12px">
           <thead>
             <tr style="background:#1e3a8a;color:white">
               <th style="padding:7px 5px;border:1px solid #1e40af;text-align:center">#</th>
               <th style="padding:7px 10px;border:1px solid #1e40af;text-align:left;min-width:150px">Block</th>
-              ${cat.k==='all'?`
-              <th colspan="4" style="padding:7px 5px;border:1px solid #1e40af;text-align:center;background:#1e5a3a" class="ekyc-col-${cat.k}-aay_cons ekyc-col-${cat.k}-aay_done ekyc-col-${cat.k}-aay_pend ekyc-col-${cat.k}-aay_pct">AAY</th>
-              <th colspan="4" style="padding:7px 5px;border:1px solid #1e40af;text-align:center;background:#1e3a8a" class="ekyc-col-${cat.k}-phh_cons ekyc-col-${cat.k}-phh_done ekyc-col-${cat.k}-phh_pend ekyc-col-${cat.k}-phh_pct">PHH</th>
-              <th colspan="4" style="padding:7px 5px;border:1px solid #1e40af;text-align:center;background:#3a1e5a" class="ekyc-col-${cat.k}-nph_cons ekyc-col-${cat.k}-nph_done ekyc-col-${cat.k}-nph_pend ekyc-col-${cat.k}-nph_pct">NPHH</th>
-              `:''}              <th style="padding:7px 5px;border:1px solid #1e40af;text-align:center" class="ekyc-col-${cat.k}-tot_cons">Considered</th>
-              <th style="padding:7px 5px;border:1px solid #1e40af;text-align:center" class="ekyc-col-${cat.k}-tot_done">Completed</th>
-              <th style="padding:7px 5px;border:1px solid #1e40af;text-align:center;cursor:pointer" onclick="ekycBlockSetSort('${cat.k}','pend')" class="ekyc-col-${cat.k}-tot_pend">Pending ${ekyc[catSortKey].col==='pend'?(ekyc[catSortKey].dir==='desc'?'▼':'▲'):'⇅'}</th>
-              ${hasComp?`<th style="padding:7px 5px;border:1px solid #1e40af;text-align:center;background:#7c3aed;min-width:80px;cursor:pointer" onclick="ekycBlockSetSort('${cat.k}','pct_old')" class="ekyc-col-${cat.k}-old_pct">${od} % ${ekyc[catSortKey].col==='pct_old'?(ekyc[catSortKey].dir==='desc'?'▼':'▲'):'⇅'}</th>`:''}              <th style="padding:7px 5px;border:1px solid #1e40af;text-align:center;min-width:80px;cursor:pointer" onclick="ekycBlockSetSort('${cat.k}','pct')" class="ekyc-col-${cat.k}-tot_pct">${d} % ${ekyc[catSortKey].col==='pct'?(ekyc[catSortKey].dir==='desc'?'▼':'▲'):'⇅'}</th>
-              ${hasComp?`<th style="padding:7px 5px;border:1px solid #1e40af;text-align:center;background:#065f46;cursor:pointer" onclick="ekycBlockSetSort('${cat.k}','added')" class="ekyc-col-${cat.k}-added">Added ${ekyc[catSortKey].col==='added'?(ekyc[catSortKey].dir==='desc'?'▼':'▲'):'⇅'}</th>`:''}            </tr>
+              ${cat.k==='all'?`<th style="padding:7px 5px;border:1px solid #1e40af;text-align:center" colspan="3">AAY</th><th style="padding:7px 5px;border:1px solid #1e40af;text-align:center" colspan="3">PHH</th><th style="padding:7px 5px;border:1px solid #1e40af;text-align:center" colspan="3">NPHH</th>`:''}
+              <th style="padding:7px 5px;border:1px solid #1e40af;text-align:center">Considered</th>
+              <th style="padding:7px 5px;border:1px solid #1e40af;text-align:center">Completed</th>
+              <th style="padding:7px 5px;border:1px solid #1e40af;text-align:center;cursor:pointer" onclick="ekycBlockSetSort('${cat.k}','pend')">Pending ${ekyc[catSortKey].col==='pend'?(ekyc[catSortKey].dir==='desc'?'▼':'▲'):'⇅'}</th>
+              ${hasComp?`<th style="padding:7px 5px;border:1px solid #1e40af;text-align:center;background:#7c3aed;min-width:80px;cursor:pointer" onclick="ekycBlockSetSort('${cat.k}','pct_old')">${od} % ${ekyc[catSortKey].col==='pct_old'?(ekyc[catSortKey].dir==='desc'?'▼':'▲'):'⇅'}</th>`:''}
+              <th style="padding:7px 5px;border:1px solid #1e40af;text-align:center;min-width:80px;cursor:pointer" onclick="ekycBlockSetSort('${cat.k}','pct')">${d} % ${ekyc[catSortKey].col==='pct'?(ekyc[catSortKey].dir==='desc'?'▼':'▲'):'⇅'}</th>
+              ${hasComp?`<th style="padding:7px 5px;border:1px solid #1e40af;text-align:center;background:#065f46;cursor:pointer" onclick="ekycBlockSetSort('${cat.k}','added')">Added ${ekyc[catSortKey].col==='added'?(ekyc[catSortKey].dir==='desc'?'▼':'▲'):'⇅'}</th>`:''}
             ${cat.k==='all'?`<tr style="background:#3b82f6;color:white">
               <th colspan="2" style="padding:4px;border:1px solid #1e40af"></th>
-              <th style="padding:4px;border:1px solid #1e40af;font-size:10px;text-align:center" class="ekyc-col-${cat.k}-aay_cons">Cons</th>
-              <th style="padding:4px;border:1px solid #1e40af;font-size:10px;text-align:center" class="ekyc-col-${cat.k}-aay_done">Done</th>
-              <th style="padding:4px;border:1px solid #1e40af;font-size:10px;text-align:center" class="ekyc-col-${cat.k}-aay_pend">Pend</th>
-              <th style="padding:4px;border:1px solid #1e40af;font-size:10px;text-align:center;background:#16a34a" class="ekyc-col-${cat.k}-aay_pct">%</th>
-              <th style="padding:4px;border:1px solid #1e40af;font-size:10px;text-align:center" class="ekyc-col-${cat.k}-phh_cons">Cons</th>
-              <th style="padding:4px;border:1px solid #1e40af;font-size:10px;text-align:center" class="ekyc-col-${cat.k}-phh_done">Done</th>
-              <th style="padding:4px;border:1px solid #1e40af;font-size:10px;text-align:center" class="ekyc-col-${cat.k}-phh_pend">Pend</th>
-              <th style="padding:4px;border:1px solid #1e40af;font-size:10px;text-align:center;background:#2563eb" class="ekyc-col-${cat.k}-phh_pct">%</th>
-              <th style="padding:4px;border:1px solid #1e40af;font-size:10px;text-align:center" class="ekyc-col-${cat.k}-nph_cons">Cons</th>
-              <th style="padding:4px;border:1px solid #1e40af;font-size:10px;text-align:center" class="ekyc-col-${cat.k}-nph_done">Done</th>
-              <th style="padding:4px;border:1px solid #1e40af;font-size:10px;text-align:center" class="ekyc-col-${cat.k}-nph_pend">Pend</th>
-              <th style="padding:4px;border:1px solid #1e40af;font-size:10px;text-align:center;background:#7c3aed" class="ekyc-col-${cat.k}-nph_pct">%</th>
+              ${['Cons','Done','Pend','Cons','Done','Pend','Cons','Done','Pend'].map(h=>`<th style="padding:4px;border:1px solid #1e40af;font-size:10px;text-align:center">${h}</th>`).join('')}
               <th colspan="${4+(hasComp?2:0)}" style="padding:4px;border:1px solid #1e40af"></th>
-            </tr>`:''}          </thead>
+            </tr>`:''}
+          </thead>
           <tbody>
             ${sortedB.map((b,i)=>{
               const cons=cat.consF(b),comp=cat.compF(b),pend=cat.pendF(b),pct=cons>0?comp/cons:0;
@@ -7291,26 +7058,14 @@ function renderEkycResults(rows,blocks,oldRows,oldBlocks){
               return `<tr>
                 <td style="padding:6px 4px;border:1px solid #e2e8f0;text-align:center;color:#64748b;font-size:11px">${i+1}</td>
                 <td style="padding:6px 8px;border:1px solid #e2e8f0;font-weight:600">${b.block}</td>
-                ${cat.k==='all'?`
-              <td style="padding:5px 4px;border:1px solid #e2e8f0;text-align:center" class="ekyc-col-${cat.k}-aay_cons">${fmtN(b.aay_cons)}</td>
-              <td style="padding:5px 4px;border:1px solid #e2e8f0;text-align:center" class="ekyc-col-${cat.k}-aay_done">${fmtN(b.aay_comp)}</td>
-              <td style="padding:5px 4px;border:1px solid #e2e8f0;text-align:center;color:#dc2626" class="ekyc-col-${cat.k}-aay_pend">${fmtN(b.aay_cons-b.aay_comp)}</td>
-              <td style="padding:5px 4px;border:1px solid #e2e8f0;text-align:center;font-weight:600;background:${b.aay_cons>0&&b.aay_comp/b.aay_cons>=0.9?'#d1fae5':b.aay_cons>0&&b.aay_comp/b.aay_cons>=0.8?'#fef3c7':'#fee2e2'}" class="ekyc-col-${cat.k}-aay_pct">${b.aay_cons>0?fmtPct(b.aay_comp/b.aay_cons):'—'}</td>
-              <td style="padding:5px 4px;border:1px solid #e2e8f0;text-align:center" class="ekyc-col-${cat.k}-phh_cons">${fmtN(b.phh_cons)}</td>
-              <td style="padding:5px 4px;border:1px solid #e2e8f0;text-align:center" class="ekyc-col-${cat.k}-phh_done">${fmtN(b.phh_comp)}</td>
-              <td style="padding:5px 4px;border:1px solid #e2e8f0;text-align:center;color:#dc2626" class="ekyc-col-${cat.k}-phh_pend">${fmtN(b.phh_cons-b.phh_comp)}</td>
-              <td style="padding:5px 4px;border:1px solid #e2e8f0;text-align:center;font-weight:600;background:${b.phh_cons>0&&b.phh_comp/b.phh_cons>=0.9?'#d1fae5':b.phh_cons>0&&b.phh_comp/b.phh_cons>=0.8?'#fef3c7':'#fee2e2'}" class="ekyc-col-${cat.k}-phh_pct">${b.phh_cons>0?fmtPct(b.phh_comp/b.phh_cons):'—'}</td>
-              <td style="padding:5px 4px;border:1px solid #e2e8f0;text-align:center" class="ekyc-col-${cat.k}-nph_cons">${fmtN(b.nph_cons)}</td>
-              <td style="padding:5px 4px;border:1px solid #e2e8f0;text-align:center" class="ekyc-col-${cat.k}-nph_done">${fmtN(b.nph_comp)}</td>
-              <td style="padding:5px 4px;border:1px solid #e2e8f0;text-align:center;color:#dc2626" class="ekyc-col-${cat.k}-nph_pend">${fmtN(b.nph_cons-b.nph_comp)}</td>
-              <td style="padding:5px 4px;border:1px solid #e2e8f0;text-align:center;font-weight:600;background:${b.nph_cons>0&&b.nph_comp/b.nph_cons>=0.9?'#d1fae5':b.nph_cons>0&&b.nph_comp/b.nph_cons>=0.8?'#fef3c7':'#fee2e2'}" class="ekyc-col-${cat.k}-nph_pct">${b.nph_cons>0?fmtPct(b.nph_comp/b.nph_cons):'—'}</td>
-              `:''}
-                <td style="padding:6px 4px;border:1px solid #e2e8f0;text-align:center;font<td style="padding:6px 4px;border:1px solid #e2e8f0;text-align:center;font-weight:600" class="ekyc-col-${cat.k}-tot_cons">${fmtN(cons)}</td>
-                <td style="padding:6px 4px;border:1px solid #e2e8f0;text-align:center;font-weight:600" class="ekyc-col-${cat.k}-tot_done">${fmtN(comp)}</td>
-                <td style="padding:6px 4px;border:1px solid #e2e8f0;text-align:center;color:#dc2626;font-weight:600" class="ekyc-col-${cat.k}-tot_pend">${fmtN(pend)}</td>
-                ${hasComp?pctCell(oldPct,'','ekyc-col-'+cat.k+'-old_pct'):''}
-                ${pctCell(pct,'','ekyc-col-'+cat.k+'-tot_pct')}
-                ${hasComp?`<td style="padding:6px 4px;border:1px solid #e2e8f0;text-align:center;font-weight:700;color:${added>0?'#059669':added<0?'#dc2626':'#64748b'}" class="ekyc-col-${cat.k}-added">${added!==null?(added>0?'+':'')+fmtN(added):'—'}</td>`:''}              </tr>`;
+                ${cat.k==='all'?`<td style="padding:5px 4px;border:1px solid #e2e8f0;text-align:center">${fmtN(b.aay_cons)}</td><td style="padding:5px 4px;border:1px solid #e2e8f0;text-align:center">${fmtN(b.aay_comp)}</td><td style="padding:5px 4px;border:1px solid #e2e8f0;text-align:center;color:#dc2626">${fmtN(b.aay_cons-b.aay_comp)}</td><td style="padding:5px 4px;border:1px solid #e2e8f0;text-align:center">${fmtN(b.phh_cons)}</td><td style="padding:5px 4px;border:1px solid #e2e8f0;text-align:center">${fmtN(b.phh_comp)}</td><td style="padding:5px 4px;border:1px solid #e2e8f0;text-align:center;color:#dc2626">${fmtN(b.phh_cons-b.phh_comp)}</td><td style="padding:5px 4px;border:1px solid #e2e8f0;text-align:center">${fmtN(b.nph_cons)}</td><td style="padding:5px 4px;border:1px solid #e2e8f0;text-align:center">${fmtN(b.nph_comp)}</td><td style="padding:5px 4px;border:1px solid #e2e8f0;text-align:center;color:#dc2626">${fmtN(b.nph_cons-b.nph_comp)}</td>`:''}
+                <td style="padding:6px 4px;border:1px solid #e2e8f0;text-align:center;font-weight:600">${fmtN(cons)}</td>
+                <td style="padding:6px 4px;border:1px solid #e2e8f0;text-align:center;font-weight:600">${fmtN(comp)}</td>
+                <td style="padding:6px 4px;border:1px solid #e2e8f0;text-align:center;color:#dc2626;font-weight:600">${fmtN(pend)}</td>
+                ${hasComp?pctCell(oldPct):''}
+                ${pctCell(pct)}
+                ${hasComp?`<td style="padding:6px 4px;border:1px solid #e2e8f0;text-align:center;font-weight:700;color:${added>0?'#059669':added<0?'#dc2626':'#64748b'}">${added!==null?(added>0?'+':'')+fmtN(added):'—'}</td>`:''}
+              </tr>`;
             }).join('')}
             <tr style="background:#f1f5f9;font-weight:700">
               <td colspan="2" style="padding:7px 8px;border:1px solid #94a3b8;text-align:center">TOTAL</td>
@@ -7356,90 +7111,9 @@ function renderEkycResults(rows,blocks,oldRows,oldBlocks){
         <button class="btn-tiny" id="sort-btn-pend" onclick="ekycShopSetSort('pend')" style="${!hasComp&&ekyc.shopSort.col==='pend'?'background:#1e3a8a;color:white;':''}">Pending ${ekyc.shopSort.col==='pend'?(ekyc.shopSort.dir==='desc'?'▼':'▲'):'⇅'}</button>
         <button class="btn-tiny" id="sort-btn-pct" onclick="ekycShopSetSort('pct')" style="${ekyc.shopSort.col==='pct'?'background:#1e3a8a;color:white;':''}">% ${ekyc.shopSort.col==='pct'?(ekyc.shopSort.dir==='desc'?'▼':'▲'):'⇅'}</button>
         ${hasComp?`<button class="btn-tiny" id="sort-btn-added" onclick="ekycShopSetSort('added')" style="${ekyc.shopSort.col==='added'?'background:#059669;color:white;':''}">Added ${ekyc.shopSort.col==='added'?(ekyc.shopSort.dir==='desc'?'▼':'▲'):'⇅'}</button>`:''}
-        <button class="btn-tiny" onclick="showEkycShopColToggle()" style="background:rgba(124,58,237,.2);border-color:rgba(124,58,237,.5);color:#c4b5fd" title="Choose columns">☰ Columns</button>
         <button class="btn-tiny" onclick="copyEkycTableImg('ekyc-shop-wrap')">📸 Copy</button>
         <button class="btn-tiny" onclick="downloadEkycShopExcel()">📥 Excel</button>
         <button class="btn-tiny" onclick="showEkycPrintDialog()">🖨️ Print / PDF</button>
-      </div>
-    </div>
-    <!-- Shop-wise numeric filter (same style as block abstract filter) -->
-    <div style="background:rgba(15,23,42,.5);border:1px solid rgba(99,102,241,.35);border-radius:8px;padding:10px 14px;margin-bottom:10px">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap">
-        <span style="font-size:12px;font-weight:700;color:#a5b4fc">🔍 வடிகட்டி (Filter)</span>
-        <span style="font-size:11px;color:var(--muted)">Shop-wise — filters table, Excel & PDF</span>
-        <button class="btn-tiny" onclick="ekycClearShopFilter()" style="margin-left:auto;font-size:11px;background:rgba(239,68,68,.15);border-color:rgba(239,68,68,.4);color:#fca5a5">✕ Clear</button>
-      </div>
-      <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-end">
-        <div>
-          <label style="font-size:11px;color:var(--muted);display:block;margin-bottom:4px">% Filter</label>
-          <div style="display:flex;align-items:center;gap:6px">
-            <select id="ekyc-shop-pct-op" style="background:rgba(15,23,42,.7);border:1px solid var(--border);color:var(--ink);padding:5px 8px;border-radius:5px;font-size:12px">
-              <option value="lt">Below (&lt;)</option>
-              <option value="gte">Above or equal (≥)</option>
-            </select>
-            <input type="number" id="ekyc-shop-pct-val" min="0" max="100" placeholder="e.g. 90" style="width:70px;background:rgba(15,23,42,.7);border:1px solid var(--border);color:var(--ink);padding:5px 8px;border-radius:5px;font-size:12px">
-            <span style="font-size:12px;color:var(--muted)">%</span>
-          </div>
-        </div>
-        <div>
-          <label style="font-size:11px;color:var(--muted);display:block;margin-bottom:4px">Pending Filter</label>
-          <div style="display:flex;align-items:center;gap:6px">
-            <select id="ekyc-shop-pend-op" style="background:rgba(15,23,42,.7);border:1px solid var(--border);color:var(--ink);padding:5px 8px;border-radius:5px;font-size:12px">
-              <option value="gt">Above (&gt;)</option>
-              <option value="lte">Below or equal (≤)</option>
-            </select>
-            <input type="number" id="ekyc-shop-pend-val" min="0" placeholder="e.g. 100" style="width:70px;background:rgba(15,23,42,.7);border:1px solid var(--border);color:var(--ink);padding:5px 8px;border-radius:5px;font-size:12px">
-          </div>
-        </div>
-        <button class="btn" onclick="ekycApplyShopFilter()" style="font-size:12px;padding:7px 18px">Apply Filter</button>
-      </div>
-      <div id="ekyc-shop-filter-status" style="font-size:11px;color:#fcd34d;margin-top:6px;min-height:16px"></div>
-    </div>
-    <!-- Shop-wise column toggle -->
-    <div id="ekyc-shop-col-panel" style="display:none;background:rgba(15,23,42,.7);border:1px solid rgba(124,58,237,.35);border-radius:8px;padding:10px 14px;margin-bottom:10px">
-      <div style="font-size:11px;font-weight:700;color:#c4b5fd;margin-bottom:8px">☰ Column Visibility — applies to table, Excel & PDF</div>
-      <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid var(--border)">
-        <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:12px;color:#fcd34d">
-          <input type="checkbox" id="shp-repeat-block" onchange="filterEkycShops()"> Repeat block name in every row (default: block header row only)
-        </label>
-      </div>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;font-size:12px">
-        <div style="border-right:1px solid var(--border);padding-right:12px">
-          <div style="font-size:10px;color:var(--muted);margin-bottom:4px;font-weight:700">AAY</div>
-          ${['cons','done','pend','pct'].map(c2=>`<label style="display:flex;align-items:center;gap:4px;cursor:pointer;margin-bottom:2px"><input type="checkbox" id="shp-col-aay_${c2}" checked onchange="ekycShopToggleCol('aay_${c2}',this.checked)"> ${c2==='cons'?'Considered':c2==='done'?'Completed':c2==='pend'?'Pending':'%'}</label>`).join('')}
-        </div>
-        <div style="border-right:1px solid var(--border);padding-right:12px">
-          <div style="font-size:10px;color:var(--muted);margin-bottom:4px;font-weight:700">PHH</div>
-          ${['cons','done','pend','pct'].map(c2=>`<label style="display:flex;align-items:center;gap:4px;cursor:pointer;margin-bottom:2px"><input type="checkbox" id="shp-col-phh_${c2}" checked onchange="ekycShopToggleCol('phh_${c2}',this.checked)"> ${c2==='cons'?'Considered':c2==='done'?'Completed':c2==='pend'?'Pending':'%'}</label>`).join('')}
-        </div>
-        <div style="border-right:1px solid var(--border);padding-right:12px">
-          <div style="font-size:10px;color:var(--muted);margin-bottom:4px;font-weight:700">NPHH</div>
-          ${['cons','done','pend','pct'].map(c2=>`<label style="display:flex;align-items:center;gap:4px;cursor:pointer;margin-bottom:2px"><input type="checkbox" id="shp-col-nph_${c2}" checked onchange="ekycShopToggleCol('nph_${c2}',this.checked)"> ${c2==='cons'?'Considered':c2==='done'?'Completed':c2==='pend'?'Pending':'%'}</label>`).join('')}
-        </div>
-        <div style="border-right:1px solid var(--border);padding-right:12px">
-          <div style="font-size:10px;color:var(--muted);margin-bottom:4px;font-weight:700">Overall</div>
-          ${['cons','done','pend','pct'].map(c2=>`<label style="display:flex;align-items:center;gap:4px;cursor:pointer;margin-bottom:2px"><input type="checkbox" id="shp-col-tot_${c2}" checked onchange="ekycShopToggleCol('tot_${c2}',this.checked)"> ${c2==='cons'?'Considered':c2==='done'?'Completed':c2==='pend'?'Pending':'%'}</label>`).join('')}
-          ${hasComp?`<label style="display:flex;align-items:center;gap:4px;cursor:pointer;margin-bottom:2px"><input type="checkbox" id="shp-col-old_pct" checked onchange="ekycShopToggleCol('old_pct',this.checked)"> Old %</label>`:''}
-          ${hasComp?`<label style="display:flex;align-items:center;gap:4px;cursor:pointer;margin-bottom:2px"><input type="checkbox" id="shp-col-added" checked onchange="ekycShopToggleCol('added',this.checked)"> Added</label>`:''}
-        </div>
-        <div style="border-left:1px solid var(--border);padding-left:12px;margin-left:4px">
-          <div style="font-size:10px;color:#fcd34d;margin-bottom:4px;font-weight:700">⊕ Selected Total</div>
-          <div style="font-size:10px;color:var(--muted);margin-bottom:6px">Combined total of chosen categories</div>
-          <label style="display:flex;align-items:center;gap:4px;cursor:pointer;margin-bottom:4px">
-            <input type="checkbox" id="shp-col-sel_total" onchange="ekycShopToggleSelectedTotal(this.checked)"> Show Selected Total
-          </label>
-          <div id="shp-sel-total-opts" style="display:none;margin-top:4px">
-            <div style="font-size:10px;color:var(--muted);margin-bottom:3px">Include:</div>
-            <label style="display:flex;align-items:center;gap:4px;cursor:pointer;margin-bottom:2px"><input type="checkbox" id="shp-sel-aay" checked onchange="ekycUpdateSelectedTotal()"> AAY</label>
-            <label style="display:flex;align-items:center;gap:4px;cursor:pointer;margin-bottom:2px"><input type="checkbox" id="shp-sel-phh" checked onchange="ekycUpdateSelectedTotal()"> PHH</label>
-            <label style="display:flex;align-items:center;gap:4px;cursor:pointer;margin-bottom:2px"><input type="checkbox" id="shp-sel-nph" onchange="ekycUpdateSelectedTotal()"> NPHH</label>
-            <div style="font-size:10px;color:var(--muted);margin-top:4px;margin-bottom:3px">Columns:</div>
-            <label style="display:flex;align-items:center;gap:4px;cursor:pointer;margin-bottom:2px"><input type="checkbox" id="shp-sel-show-cons" checked onchange="ekycUpdateSelectedTotal()"> Cons</label>
-            <label style="display:flex;align-items:center;gap:4px;cursor:pointer;margin-bottom:2px"><input type="checkbox" id="shp-sel-show-done" checked onchange="ekycUpdateSelectedTotal()"> Done</label>
-            <label style="display:flex;align-items:center;gap:4px;cursor:pointer;margin-bottom:2px"><input type="checkbox" id="shp-sel-show-pend" checked onchange="ekycUpdateSelectedTotal()"> Pend</label>
-            <label style="display:flex;align-items:center;gap:4px;cursor:pointer;margin-bottom:2px"><input type="checkbox" id="shp-sel-show-pct" checked onchange="ekycUpdateSelectedTotal()"> %</label>
-          </div>
-        </div>
       </div>
     </div>
     <div style="overflow-x:auto;background:white;border-radius:8px;border:1px solid #cbd5e1;color:#1e293b;max-height:500px;overflow-y:auto" id="ekyc-shop-wrap">
@@ -7450,27 +7124,12 @@ function renderEkycResults(rows,blocks,oldRows,oldBlocks){
             <th style="padding:7px 8px;border:1px solid #1e40af;text-align:left;min-width:130px">Block</th>
             <th style="padding:7px 5px;border:1px solid #1e40af">Shop Code</th>
             <th style="padding:7px 8px;border:1px solid #1e40af;min-width:150px">Shop Name</th>
-            <th colspan="4" style="padding:7px 5px;border:1px solid #1e40af;text-align:center;background:#1e5a3a" class="shp-col-aay_cons shp-col-aay_done shp-col-aay_pend shp-col-aay_pct">AAY</th>
-            <th colspan="4" style="padding:7px 5px;border:1px solid #1e40af;text-align:center;background:#1e3a8a" class="shp-col-phh_cons shp-col-phh_done shp-col-phh_pend shp-col-phh_pct">PHH</th>
-            <th colspan="4" style="padding:7px 5px;border:1px solid #1e40af;text-align:center;background:#3a1e5a" class="shp-col-nph_cons shp-col-nph_done shp-col-nph_pend shp-col-nph_pct">NPHH</th>
-            <th style="padding:7px 5px;border:1px solid #1e40af;text-align:center" class="shp-col-tot_cons">Considered</th>
-            <th style="padding:7px 5px;border:1px solid #1e40af;text-align:center" class="shp-col-tot_done">Completed</th>
-            ${sortTh('pend','Pending','min-width:60px;'+' class="shp-col-tot_pend"')}
-            ${hasComp?sortTh('pct_old',od+' %','background:#7c3aed;min-width:65px; class="shp-col-old_pct"'):''}
-            ${sortTh('pct',hasComp?d+' %':'%','min-width:65px; class="shp-col-tot_pct"')}
-            ${hasComp?sortTh('added','Added','background:#065f46; class="shp-col-added"'):''}
-            <!-- Selected Total headers - injected by JS -->
-          </tr>
-          <tr style="background:#3b82f6;color:white">
-            <th colspan="4" style="padding:3px;border:1px solid #1e40af"></th>
-            ${['aay','phh','nph'].map(cat=>[
-              `<th style="padding:3px;border:1px solid #1e40af;font-size:9px;text-align:center" class="shp-col-${cat}_cons">Cons</th>`,
-              `<th style="padding:3px;border:1px solid #1e40af;font-size:9px;text-align:center" class="shp-col-${cat}_done">Done</th>`,
-              `<th style="padding:3px;border:1px solid #1e40af;font-size:9px;text-align:center" class="shp-col-${cat}_pend">Pend</th>`,
-              `<th style="padding:3px;border:1px solid #1e40af;font-size:9px;text-align:center;background:rgba(0,0,0,.2)" class="shp-col-${cat}_pct">%</th>`,
-            ].join('')).join('')}
-            <th colspan="${4+(hasComp?2:0)}" style="padding:3px;border:1px solid #1e40af"></th>
-            <!-- Selected Total sub-headers - injected by JS -->
+            <th style="padding:7px 5px;border:1px solid #1e40af;text-align:center">Considered</th>
+            <th style="padding:7px 5px;border:1px solid #1e40af;text-align:center">Completed</th>
+            ${sortTh('pend','Pending')}
+            ${hasComp?sortTh('pct_old',od+' %','background:#7c3aed;min-width:65px;'):''}
+            ${sortTh('pct',hasComp?d+' %':'%','min-width:65px;')}
+            ${hasComp?sortTh('added','Added','background:#065f46;'):''}
           </tr>
         </thead>
         <tbody id="ekyc-shop-tbody"></tbody>
@@ -7484,39 +7143,13 @@ function renderEkycResults(rows,blocks,oldRows,oldBlocks){
   switchEkycTab('all');
 }
 
-// Global export — routes to active tab's handler
-function ekycGlobalCopy(){
-  const tab = ekyc._activeTab || 'all';
-  if(tab==='shop') copyEkycTableImg('ekyc-shop-wrap');
-  else copyEkycTableImg('ekyc-block-tbl-'+tab+'-wrap');
-}
-function ekycGlobalExcel(){
-  const tab = ekyc._activeTab || 'all';
-  if(tab==='shop') downloadEkycShopExcel();
-  else downloadEkycExcel();
-}
-function ekycGlobalPrint(){
-  const tab = ekyc._activeTab || 'all';
-  if(tab==='shop') showEkycPrintDialog();
-  else showEkycBlockPrintDialog(tab);
-}
-
 function switchEkycTab(tab){
-  ekyc._activeTab = tab; // track for global export buttons
   ['all','aay','phh','nph','shop'].forEach(k=>{
     const sec=document.getElementById('ekyc-section-'+k);
     const btn=document.getElementById('ekyc-tab-'+k);
     if(sec)sec.style.display=k===tab?'':'none';
     if(btn){btn.style.background=k===tab?'#1e3a8a':'';btn.style.color=k===tab?'white':'';btn.style.borderColor=k===tab?'#1e3a8a':'';}
   });
-  // Update global button tooltips
-  const copyBtn=document.getElementById('ekyc-global-copy');
-  const xlBtn=document.getElementById('ekyc-global-excel');
-  const prBtn=document.getElementById('ekyc-global-print');
-  const tabName={'all':'ALL','aay':'AAY','phh':'PHH','nph':'NPHH','shop':'Shop-wise'}[tab]||tab;
-  if(copyBtn) copyBtn.title=`📸 Copy ${tabName}`;
-  if(xlBtn)   xlBtn.title=`📥 Excel ${tabName}`;
-  if(prBtn)   prBtn.title=`🖨️ Print ${tabName}`;
 }
 
 // ── Sort for Block Abstract tables (ALL/AAY/PHH/NPHH) ─────────────────────
@@ -7529,273 +7162,36 @@ function ekycBlockSetSort(catK, col){
     const defaultDesc=['pend','added'];
     ekyc[key]={col, dir: defaultDesc.includes(col)?'desc':'asc'};
   }
+  // Re-render using stored data
   if(ekyc.processedRows2 && ekyc.blocks){
     const oldRows=ekyc.oldData?parseEkycRows(ekyc.oldData):null;
     renderEkycResults(ekyc.processedRows2, ekyc.blocks, oldRows, ekyc.oldBlocks);
     switchEkycTab(catK);
   }
 }
-
-// ── Column visibility toggle ─────────────────────────────────
-function showEkycColToggle(catK){
-  const panel = document.getElementById('ekyc-col-toggle-'+catK);
-  if(!panel) return;
-  panel.style.display = panel.style.display==='none' ? '' : 'none';
-}
-
-function ekycToggleCol(catK, colId, visible){
-  // Toggle all elements with class ekyc-col-{catK}-{colId}
-  const cls = 'ekyc-col-'+catK+'-'+colId;
-  document.querySelectorAll('.'+cls).forEach(el=>{
-    el.style.display = visible ? '' : 'none';
-  });
-}
-
-// ── Block Abstract Print Dialog ──────────────────────────────
-function showEkycBlockPrintDialog(catK){
-  const existing = document.getElementById('ekyc-blk-print-dialog');
-  if(existing){ existing.remove(); return; }
-  const dlg = document.createElement('div');
-  dlg.id = 'ekyc-blk-print-dialog';
-  dlg.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#0f172a;border:1px solid rgba(99,102,241,.5);border-radius:12px;padding:24px;z-index:9999;min-width:280px;box-shadow:0 20px 60px rgba(0,0,0,.6)';
-  dlg.innerHTML = `
-    <div style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:16px">🖨️ Print Block Abstract — ${catK.toUpperCase()}</div>
-    <div style="margin-bottom:12px">
-      <div style="font-size:11px;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px">Orientation</div>
-      <div style="display:flex;gap:8px">
-        <label style="display:flex;align-items:center;gap:6px;cursor:pointer;padding:8px 14px;background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.4);border-radius:6px;font-size:12px;color:#a5b4fc">
-          <input type="radio" name="blk-orient" value="portrait" checked> Portrait
-        </label>
-        <label style="display:flex;align-items:center;gap:6px;cursor:pointer;padding:8px 14px;background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.4);border-radius:6px;font-size:12px;color:#a5b4fc">
-          <input type="radio" name="blk-orient" value="landscape"> Landscape
-        </label>
-      </div>
-    </div>
-    <div style="display:flex;gap:8px">
-      <button class="btn" onclick="const o=document.querySelector('input[name=blk-orient]:checked').value;document.getElementById('ekyc-blk-print-dialog').remove();printEkycBlockAbstract('${catK}',o);" style="flex:1;font-size:12px;padding:8px">Generate PDF</button>
-      <button class="btn secondary" onclick="document.getElementById('ekyc-blk-print-dialog').remove()" style="font-size:12px;padding:8px">Cancel</button>
-    </div>`;
-  document.body.appendChild(dlg);
-  setTimeout(()=>{
-    document.addEventListener('click', function h(e){
-      if(!dlg.contains(e.target)){ dlg.remove(); document.removeEventListener('click',h); }
-    });
-  }, 100);
-}
-// ── Shop-wise filter state & functions ──────────────────────
-if(!ekyc.shopFilter) ekyc.shopFilter = {active:false, pctOp:'lt', pctVal:null, pendOp:'gt', pendVal:null};
-
-function ekycApplyShopFilter(){
-  const pctValRaw  = document.getElementById('ekyc-shop-pct-val')?.value.trim();
-  const pendValRaw = document.getElementById('ekyc-shop-pend-val')?.value.trim();
-  const pctOp  = document.getElementById('ekyc-shop-pct-op')?.value || 'lt';
-  const pendOp = document.getElementById('ekyc-shop-pend-op')?.value || 'gt';
-  const hasPct  = pctValRaw!=='' && !isNaN(parseFloat(pctValRaw));
-  const hasPend = pendValRaw!=='' && !isNaN(parseFloat(pendValRaw));
-  if(!hasPct && !hasPend){ toast('Enter at least one filter value',true); return; }
-  ekyc.shopFilter = {active:true, pctOp, pctVal:hasPct?parseFloat(pctValRaw):null, pendOp, pendVal:hasPend?parseFloat(pendValRaw):null};
-  filterEkycShops();
-  const parts=[]; if(hasPct) parts.push(`% ${pctOp==='lt'?'<':'≥'} ${pctValRaw}%`); if(hasPend) parts.push(`Pending ${pendOp==='gt'?'>':'≤'} ${pendValRaw}`);
-  const st=document.getElementById('ekyc-shop-filter-status'); if(st) st.textContent=`🔎 Active: ${parts.join(' AND ')}`;
-  toast('Shop filter applied');
-}
-
-function ekycClearShopFilter(){
-  ekyc.shopFilter = {active:false};
-  const pv=document.getElementById('ekyc-shop-pct-val'); const pnd=document.getElementById('ekyc-shop-pend-val');
-  if(pv) pv.value=''; if(pnd) pnd.value='';
-  const st=document.getElementById('ekyc-shop-filter-status'); if(st) st.textContent='';
-  filterEkycShops(); toast('Shop filter cleared');
-}
-
-function ekycShopPassesFilter(r){
-  if(!ekyc.shopFilter||!ekyc.shopFilter.active) return true;
-  const cfg = getEkycSelTotalConfig();
-  // Use Selected Total values if active, otherwise overall
-  let cons, comp;
-  if(cfg.active){
-    cons=0; comp=0;
-    if(cfg.aay){cons+=r.aay_cons||0;comp+=r.aay_comp||0;}
-    if(cfg.phh){cons+=r.phh_cons||0;comp+=r.phh_comp||0;}
-    if(cfg.nph){cons+=r.nph_cons||0;comp+=r.nph_comp||0;}
-  } else {
-    cons=r.total_cons||0; comp=r.total_comp||0;
-  }
-  const pend=Math.max(0,cons-comp);
-  const pct=cons>0?comp/cons*100:0;
-  const f=ekyc.shopFilter;
-  if(f.pctVal!==null){ const pass=f.pctOp==='lt'?pct<f.pctVal:pct>=f.pctVal; if(!pass) return false; }
-  if(f.pendVal!==null){ const pass=f.pendOp==='gt'?pend>f.pendVal:pend<=f.pendVal; if(!pass) return false; }
-  return true;
-}
-
-function showEkycShopColToggle(){
-  const panel = document.getElementById('ekyc-shop-col-panel');
-  if(!panel) return;
-  panel.style.display = panel.style.display==='none' ? '' : 'none';
-}
-
-function ekycShopToggleSelectedTotal(visible){
-  const opts = document.getElementById('shp-sel-total-opts');
-  if(opts) opts.style.display = visible ? '' : 'none';
-  ekyc.shopSelTotal = visible;
-  if(ekyc.processedRows2 && ekyc.blocks){
-    const oldRows = ekyc.oldData ? parseEkycRows(ekyc.oldData) : null;
-    filterEkycShops(); // re-render with new col
-  }
-}
-
-function ekycUpdateSelectedTotal(){
-  if(ekyc.processedRows2 && ekyc.blocks) filterEkycShops();
-}
-
-// Get the selected-total config from checkboxes
-function getEkycSelTotalConfig(){
-  return {
-    active: document.getElementById('shp-col-sel_total')?.checked || false,
-    aay:    document.getElementById('shp-sel-aay')?.checked !== false,
-    phh:    document.getElementById('shp-sel-phh')?.checked !== false,
-    nph:    document.getElementById('shp-sel-nph')?.checked || false,
-    cons:   document.getElementById('shp-sel-show-cons')?.checked !== false,
-    done:   document.getElementById('shp-sel-show-done')?.checked !== false,
-    pend:   document.getElementById('shp-sel-show-pend')?.checked !== false,
-    pct:    document.getElementById('shp-sel-show-pct')?.checked !== false,
-  };
-}
-
-// Build "Selected Total" cells for a given data row (block or shop)
-function ekycGetSelTotalCells(r, isBlock){
-  const cfg = getEkycSelTotalConfig();
-  if(!cfg.active) return '';
-  // Compute selected totals
-  let selCons=0, selComp=0;
-  if(cfg.aay){ selCons+=(r.aay_cons||0); selComp+=(r.aay_comp||0); }
-  if(cfg.phh){ selCons+=(r.phh_cons||0); selComp+=(r.phh_comp||0); }
-  if(cfg.nph){ selCons+=(r.nph_cons||0); selComp+=(r.nph_comp||0); }
-  const selPend = Math.max(0, selCons-selComp);
-  const selPct  = selCons>0 ? selComp/selCons : 0;
-  const bg = selPct>=0.9?'#d1fae5':selPct>=0.8?'#fef3c7':'#fee2e2';
-  const pad = isBlock ? '5px 4px' : '4px 3px';
-  const border = isBlock ? '#cbd5e1' : '#e2e8f0';
-  const bstyle = isBlock ? 'font-weight:700;' : '';
-  let cells = '';
-  if(cfg.cons) cells += `<td style="padding:${pad};border:1px solid ${border};text-align:center;${bstyle}background:#fffbeb" class="shp-col-sel_cons">${fmtN(selCons)}</td>`;
-  if(cfg.done) cells += `<td style="padding:${pad};border:1px solid ${border};text-align:center;${bstyle}background:#fffbeb" class="shp-col-sel_done">${fmtN(selComp)}</td>`;
-  if(cfg.pend) cells += `<td style="padding:${pad};border:1px solid ${border};text-align:center;${bstyle}color:#dc2626;background:#fffbeb" class="shp-col-sel_pend">${fmtN(selPend)}</td>`;
-  if(cfg.pct)  cells += `<td style="padding:${pad};border:1px solid ${border};text-align:center;${bstyle}background:${bg};font-weight:700" class="shp-col-sel_pct">${fmtPct(selPct)}</td>`;
-  return cells;
-}
-
-// Build Selected Total header cells — called after table renders
-function ekycBuildSelTotalHeaders(){
-  // Always clean up first
-  document.querySelectorAll('.sel-total-th,.sel-sub-cons,.sel-sub-done,.sel-sub-pend,.sel-sub-pct').forEach(e=>e.remove());
-
-  const cfg = getEkycSelTotalConfig();
-  if(!cfg.active) return;
-
-  const cats = [cfg.aay?'AAY':'',cfg.phh?'PHH':'',cfg.nph?'NPHH':''].filter(Boolean);
-  const label = cats.length>0 ? cats.join('+') : 'Selected';
-  const subCount = [cfg.cons,cfg.done,cfg.pend,cfg.pct].filter(Boolean).length;
-  if(subCount===0) return;
-
-  // Row 1: group header spanning subCount columns
-  const thead1 = document.getElementById('ekyc-shop-thead');
-  if(thead1){
-    const th = document.createElement('th');
-    th.className = 'sel-total-th';
-    th.colSpan = subCount;
-    th.style.cssText = 'padding:7px 5px;border:1px solid #1e40af;text-align:center;background:#92400e;color:white;font-size:11px;font-weight:700;white-space:nowrap';
-    th.textContent = `⊕ ${label}`;
-    thead1.appendChild(th);
-  }
-
-  // Row 2: sub-column labels (Cons, Done, Pend, %)
-  const allRows = document.querySelectorAll('#ekyc-shop-wrap table thead tr');
-  const row2 = allRows[1]; // second thead row
-  if(row2){
-    const subLabels = [
-      {show:cfg.cons, label:'Cons', cls:'sel-sub-cons'},
-      {show:cfg.done, label:'Done', cls:'sel-sub-done'},
-      {show:cfg.pend, label:'Pend', cls:'sel-sub-pend'},
-      {show:cfg.pct,  label:'%',    cls:'sel-sub-pct'},
-    ];
-    subLabels.filter(s=>s.show).forEach(s=>{
-      const th = document.createElement('th');
-      th.className = s.cls;
-      th.style.cssText = 'padding:3px;border:1px solid #1e40af;font-size:9px;text-align:center;background:#78350f;color:white';
-      th.textContent = s.label;
-      row2.appendChild(th);
-    });
-  }
-}
-
-function ekycShopToggleCol(colId, visible){
-  // Store state
-  if(!ekyc.shopColVis) ekyc.shopColVis = {};
-  ekyc.shopColVis[colId] = visible;
-  document.querySelectorAll('.shp-col-'+colId).forEach(el=>{ el.style.display = visible ? '' : 'none'; });
-}
-
-function reapplyShopColVisibility(){
-  if(!ekyc.shopColVis) return;
-  Object.entries(ekyc.shopColVis).forEach(([colId, visible])=>{
-    document.querySelectorAll('.shp-col-'+colId).forEach(el=>{ el.style.display = visible ? '' : 'none'; });
-    // Sync checkbox
-    const cb = document.getElementById('shp-col-'+colId);
-    if(cb) cb.checked = visible;
-  });
-}
-
-// Get currently visible shop columns for Excel/PDF export
-function getVisibleShopCols(){
-  const ALL_COLS = ['aay_cons','aay_done','aay_pend','aay_pct','phh_cons','phh_done','phh_pend','phh_pct','nph_cons','nph_done','nph_pend','nph_pct','tot_cons','tot_done','tot_pend','old_pct','tot_pct','added'];
-  const vis = ekyc.shopColVis || {};
-  const cols = ALL_COLS.filter(c=>vis[c]!==false);
-  // Add sel_total cols if active
-  const cfg = getEkycSelTotalConfig();
-  if(cfg.active){
-    if(cfg.cons) cols.push('sel_cons');
-    if(cfg.done) cols.push('sel_done');
-    if(cfg.pend) cols.push('sel_pend');
-    if(cfg.pct)  cols.push('sel_pct');
-  }
-  return cols;
-}
-
 function ekycShopSetSort(col){
   if(!ekyc.shopSort) ekyc.shopSort={col,dir:'desc'};
   else if(ekyc.shopSort.col===col){
     ekyc.shopSort.dir = ekyc.shopSort.dir==='desc'?'asc':'desc';
   } else {
-    const defaultDesc = ['pend','added'];
+    // New column: default direction
+    const defaultDesc = ['pend','added']; // these default to descending (high first)
     ekyc.shopSort = {col, dir: defaultDesc.includes(col)?'desc':'asc'};
   }
-  filterEkycShops();
+  filterEkycShops(); // re-render with new sort
 }
 
 function sortShopsWithinBlock(shops){
   const {col,dir} = ekyc.shopSort || {col:'pend',dir:'desc'};
+  const hasComp = !!ekyc.oldBlocks;
   const oldShopMap = {};
   if(ekyc.oldData) parseEkycRows(ekyc.oldData).forEach(r=>{ oldShopMap[r.shopcode]=r; });
-  // Use Selected Total values if active
-  const cfg = getEkycSelTotalConfig();
-  function getSelVal(r){
-    let cons=0,comp=0;
-    if(cfg.aay){cons+=r.aay_cons||0;comp+=r.aay_comp||0;}
-    if(cfg.phh){cons+=r.phh_cons||0;comp+=r.phh_comp||0;}
-    if(cfg.nph){cons+=r.nph_cons||0;comp+=r.nph_comp||0;}
-    return {cons,comp,pend:Math.max(0,cons-comp),pct:cons>0?comp/cons:0};
-  }
   return shops.slice().sort((a,b)=>{
     let va, vb;
-    if(col==='pend'){
-      if(cfg.active){const sA=getSelVal(a),sB=getSelVal(b);va=sA.pend;vb=sB.pend;}
-      else{va=Math.max(0,a.total_cons-a.total_comp);vb=Math.max(0,b.total_cons-b.total_comp);}
-    } else if(col==='pct'){
-      if(cfg.active){const sA=getSelVal(a),sB=getSelVal(b);va=sA.pct;vb=sB.pct;}
-      else{va=a.total_pct;vb=b.total_pct;}
-    } else if(col==='pct_old'){
+    const pA=Math.max(0,a.total_cons-a.total_comp), pB=Math.max(0,b.total_cons-b.total_comp);
+    if(col==='pend'){va=pA;vb=pB;}
+    else if(col==='pct'){va=a.total_pct;vb=b.total_pct;}
+    else if(col==='pct_old'){
       const oA=oldShopMap[a.shopcode],oB=oldShopMap[b.shopcode];
       va=oA&&oA.total_cons>0?oA.total_comp/oA.total_cons:0;
       vb=oB&&oB.total_cons>0?oB.total_comp/oB.total_cons:0;
@@ -7803,10 +7199,7 @@ function sortShopsWithinBlock(shops){
       const oA=oldShopMap[a.shopcode],oB=oldShopMap[b.shopcode];
       va=oA?a.total_comp-oA.total_comp:-99999;
       vb=oB?b.total_comp-oB.total_comp:-99999;
-    } else {
-      if(cfg.active){const sA=getSelVal(a),sB=getSelVal(b);va=sA.pend;vb=sB.pend;}
-      else{va=Math.max(0,a.total_cons-a.total_comp);vb=Math.max(0,b.total_cons-b.total_comp);}
-    }
+    } else {va=pA;vb=pB;}
     return dir==='desc'?vb-va:va-vb;
   });
 }
@@ -7816,53 +7209,32 @@ function renderEkycShopTable(rows){
   const oldShopMap = {};
   if(ekyc.oldData) parseEkycRows(ekyc.oldData).forEach(r=>{ oldShopMap[r.shopcode]=r; });
 
-  // Always GROUPED by block (like pivot table). Sort WITHIN each block by selected sort.
+  // Group rows by block, sort within each block using chosen sort
   const blockGroups = {};
-  rows.forEach(r=>{ if(!blockGroups[r.block]) blockGroups[r.block]=[]; blockGroups[r.block].push(r); });
-  // Sort blocks alphabetically always
+  rows.forEach(r=>{
+    if(!blockGroups[r.block]) blockGroups[r.block]=[];
+    blockGroups[r.block].push(r);
+  });
+  // Sort block names alphabetically
   const blockNames = Object.keys(blockGroups).sort();
-
-  function subCell(val, cls, red=false){
-    return `<td style="padding:4px 3px;border:1px solid #e2e8f0;text-align:center;font-size:10px;${red?'color:#dc2626':''}" class="${cls}">${fmtN(val)}</td>`;
-  }
-  function subPctCell(cons, comp, cls){
-    const p = cons>0?comp/cons:0;
-    const bg = p>=0.9?'#d1fae5':p>=0.8?'#fef3c7':'#fee2e2';
-    return `<td style="padding:4px 3px;border:1px solid #e2e8f0;text-align:center;font-size:10px;font-weight:700;background:${bg}" class="${cls}">${cons>0?fmtPct(p):'—'}</td>`;
-  }
 
   let html=''; let si=1;
   blockNames.forEach((blockName,bi)=>{
-    if(bi>0) html+=`<tr><td colspan="20" style="padding:2px;background:#f1f5f9"></td></tr>`;
+    if(bi>0) html+=`<tr><td colspan="${hasComp?10:8}" style="padding:2px;background:#f1f5f9"></td></tr>`;
     const bb=ekyc.blocks.find(b=>b.block===blockName)||{};
     const bpend=Math.max(0,(bb.total_cons||0)-(bb.total_comp||0));
     const c=pctGradient(bb.pct||0);
-    // Block header row — compute Selected Total for block
-    const cfg=getEkycSelTotalConfig();
-    let bSelCons=0,bSelComp=0;
-    if(cfg.active){if(cfg.aay){bSelCons+=bb.aay_cons||0;bSelComp+=bb.aay_comp||0;}if(cfg.phh){bSelCons+=bb.phh_cons||0;bSelComp+=bb.phh_comp||0;}if(cfg.nph){bSelCons+=bb.nph_cons||0;bSelComp+=bb.nph_comp||0;}}
-    const bSelPend=Math.max(0,bSelCons-bSelComp);
-    const bSelPct=bSelCons>0?bSelComp/bSelCons:0;
+    // Block header row
     html+=`<tr style="background:#dbeafe">
       <td style="padding:5px 4px;border:1px solid #cbd5e1;text-align:center;font-size:10px;color:#64748b">${si++}</td>
       <td colspan="3" style="padding:5px 8px;border:1px solid #cbd5e1;font-weight:700;font-size:12px;color:#1e3a8a">${blockName}</td>
-      ${subCell(bb.aay_cons||0,'shp-col-aay_cons')}${subCell(bb.aay_comp||0,'shp-col-aay_done')}${subCell(Math.max(0,(bb.aay_cons||0)-(bb.aay_comp||0)),'shp-col-aay_pend',true)}${subPctCell(bb.aay_cons||0,bb.aay_comp||0,'shp-col-aay_pct')}
-      ${subCell(bb.phh_cons||0,'shp-col-phh_cons')}${subCell(bb.phh_comp||0,'shp-col-phh_done')}${subCell(Math.max(0,(bb.phh_cons||0)-(bb.phh_comp||0)),'shp-col-phh_pend',true)}${subPctCell(bb.phh_cons||0,bb.phh_comp||0,'shp-col-phh_pct')}
-      ${subCell(bb.nph_cons||0,'shp-col-nph_cons')}${subCell(bb.nph_comp||0,'shp-col-nph_done')}${subCell(Math.max(0,(bb.nph_cons||0)-(bb.nph_comp||0)),'shp-col-nph_pend',true)}${subPctCell(bb.nph_cons||0,bb.nph_comp||0,'shp-col-nph_pct')}
-      <td style="padding:5px 4px;border:1px solid #cbd5e1;text-align:center;font-weight:700" class="shp-col-tot_cons">${fmtN(bb.total_cons||0)}</td>
-      <td style="padding:5px 4px;border:1px solid #cbd5e1;text-align:center;font-weight:700" class="shp-col-tot_done">${fmtN(bb.total_comp||0)}</td>
-      <td style="padding:5px 4px;border:1px solid #cbd5e1;text-align:center;font-weight:700;color:#dc2626" class="shp-col-tot_pend">${fmtN(bpend)}</td>
-      ${hasComp?`<td style="padding:5px 4px;border:1px solid #cbd5e1" class="shp-col-old_pct"></td>`:''}
-      <td style="padding:5px 4px;border:1px solid #cbd5e1;text-align:center;font-weight:700;background:${c.bg};color:${c.fg}" class="shp-col-tot_pct">${fmtPct(bb.pct||0)}</td>
-      ${hasComp?'<td style="padding:5px 4px;border:1px solid #cbd5e1" class="shp-col-added"></td>':''}
-      ${cfg.active?`
-        ${cfg.cons?`<td style="padding:5px 4px;border:1px solid #cbd5e1;text-align:center;font-weight:700;background:#fffbeb" class="shp-col-sel_cons">${fmtN(bSelCons)}</td>`:''}
-        ${cfg.done?`<td style="padding:5px 4px;border:1px solid #cbd5e1;text-align:center;font-weight:700;background:#fffbeb" class="shp-col-sel_done">${fmtN(bSelComp)}</td>`:''}
-        ${cfg.pend?`<td style="padding:5px 4px;border:1px solid #cbd5e1;text-align:center;font-weight:700;color:#dc2626;background:#fffbeb" class="shp-col-sel_pend">${fmtN(bSelPend)}</td>`:''}
-        ${cfg.pct?`<td style="padding:5px 4px;border:1px solid #cbd5e1;text-align:center;font-weight:700;background:${bSelPct>=0.9?'#d1fae5':bSelPct>=0.8?'#fef3c7':'#fee2e2'}" class="shp-col-sel_pct">${fmtPct(bSelPct)}</td>`:''}`:''}
+      <td style="padding:5px 4px;border:1px solid #cbd5e1;text-align:center;font-weight:700">${fmtN(bb.total_cons||0)}</td>
+      <td style="padding:5px 4px;border:1px solid #cbd5e1;text-align:center;font-weight:700">${fmtN(bb.total_comp||0)}</td>
+      <td style="padding:5px 4px;border:1px solid #cbd5e1;text-align:center;font-weight:700;color:#dc2626">${fmtN(bpend)}</td>
+      <td style="padding:5px 4px;border:1px solid #cbd5e1;text-align:center;font-weight:700;background:${c.bg};color:${c.fg}">${fmtPct(bb.pct||0)}</td>
+      ${hasComp?'<td colspan="2" style="padding:5px 4px;border:1px solid #cbd5e1"></td>':''}
     </tr>`;
-
-    // Sort shops within this block using the current sort (respects Selected Total)
+    // Sort shops within this block
     const sorted = sortShopsWithinBlock(blockGroups[blockName]);
     sorted.forEach(r=>{
       const pend=Math.max(0,r.total_cons-r.total_comp);
@@ -7875,37 +7247,25 @@ function renderEkycShopTable(rows){
         <td style="padding:4px 6px;border:1px solid #e2e8f0"></td>
         <td style="padding:4px 6px;border:1px solid #e2e8f0;font-family:monospace;font-size:10px">${r.shopcode}</td>
         <td style="padding:4px 6px;border:1px solid #e2e8f0;font-size:11px">${r.shop_name}</td>
-        ${subCell(r.aay_cons,'shp-col-aay_cons')}${subCell(r.aay_comp,'shp-col-aay_done')}${subCell(r.aay_pend,'shp-col-aay_pend',true)}${subPctCell(r.aay_cons,r.aay_comp,'shp-col-aay_pct')}
-        ${subCell(r.phh_cons,'shp-col-phh_cons')}${subCell(r.phh_comp,'shp-col-phh_done')}${subCell(r.phh_pend,'shp-col-phh_pend',true)}${subPctCell(r.phh_cons,r.phh_comp,'shp-col-phh_pct')}
-        ${subCell(r.nph_cons,'shp-col-nph_cons')}${subCell(r.nph_comp,'shp-col-nph_done')}${subCell(r.nph_pend,'shp-col-nph_pend',true)}${subPctCell(r.nph_cons,r.nph_comp,'shp-col-nph_pct')}
-        <td style="padding:4px;border:1px solid #e2e8f0;text-align:center" class="shp-col-tot_cons">${fmtN(r.total_cons)}</td>
-        <td style="padding:4px;border:1px solid #e2e8f0;text-align:center" class="shp-col-tot_done">${fmtN(r.total_comp)}</td>
-        <td style="padding:4px;border:1px solid #e2e8f0;text-align:center;color:#dc2626" class="shp-col-tot_pend">${fmtN(pend)}</td>
-        ${hasComp?`<td style="padding:4px;border:1px solid #e2e8f0;text-align:center" class="shp-col-old_pct">${oldPct!==null?fmtPct(oldPct):'—'}</td>`:''}
-        <td style="padding:4px;border:1px solid #e2e8f0;text-align:center;font-weight:700;background:${cShop.bg};color:${cShop.fg}" class="shp-col-tot_pct">${fmtPct(r.total_pct)}</td>
-        ${hasComp?`<td style="padding:4px;border:1px solid #e2e8f0;text-align:center;font-size:11px;font-weight:700;color:${added>0?'#059669':added<0?'#dc2626':'#64748b'}" class="shp-col-added">${added!==null?(added>0?'+':'')+fmtN(added):'—'}</td>`:''}
-        ${ekycGetSelTotalCells(r, false)}
+        <td style="padding:4px;border:1px solid #e2e8f0;text-align:center">${fmtN(r.total_cons)}</td>
+        <td style="padding:4px;border:1px solid #e2e8f0;text-align:center">${fmtN(r.total_comp)}</td>
+        <td style="padding:4px;border:1px solid #e2e8f0;text-align:center;color:#dc2626">${fmtN(pend)}</td>
+        ${hasComp?pctCell(oldPct,'font-size:11px'):''}
+        <td style="padding:4px;border:1px solid #e2e8f0;text-align:center;font-weight:700;background:${cShop.bg};color:${cShop.fg}">${fmtPct(r.total_pct)}</td>
+        ${hasComp?`<td style="padding:4px;border:1px solid #e2e8f0;text-align:center;font-size:11px;font-weight:700;color:${added>0?'#059669':added<0?'#dc2626':'#64748b'}">${added!==null?(added>0?'+':'')+fmtN(added):'—'}</td>`:''}
       </tr>`;
     });
   });
-
   const tbody=document.getElementById('ekyc-shop-tbody');
-  if(tbody){ tbody.innerHTML=html; reapplyShopColVisibility(); ekycBuildSelTotalHeaders(); }
+  if(tbody)tbody.innerHTML=html;
 }
-
-
-
 
 function filterEkycShops(){
   const sel=document.getElementById('ekyc-block-filter')?.value||'';
   let rows=sel?ekyc.processedRows2.filter(r=>r.block===sel):ekyc.processedRows2;
-  // Apply block-level numeric filter (from block abstract filter panel)
+  // Apply numeric filters
   if(ekyc.filter && ekyc.filter.active){
     rows = rows.filter(r=>ekycBlockPassesFilter(r.total_cons||0, r.total_comp||0));
-  }
-  // Apply shop-level numeric filter
-  if(ekyc.shopFilter && ekyc.shopFilter.active){
-    rows = rows.filter(r=>ekycShopPassesFilter(r));
   }
   renderEkycShopTable(rows);
   // Update sort button styles after re-render
@@ -7963,186 +7323,169 @@ function showEkycPrintDialog(){
 
 function printEkycShopwise(orientation){
   if(typeof window.jspdf === 'undefined' && typeof jspdf === 'undefined'){
-    toast('PDF library not loaded.',true); return;
+    toast('PDF library not loaded. Check internet and retry.',true); return;
   }
-  const hasComp = !!ekyc.oldBlocks;
-  const blockFilter = document.getElementById('ekyc-block-filter')?.value||'';
-  const repeatBlock = document.getElementById('shp-repeat-block')?.checked||false;
+  const hasComp=!!ekyc.oldBlocks;
+  const blockFilter=document.getElementById('ekyc-block-filter')?.value||'';
 
-  // Get rows with all active filters
+  // Get rows respecting BOTH block filter AND numeric filter
   let allRows = blockFilter ? ekyc.processedRows2.filter(r=>r.block===blockFilter) : ekyc.processedRows2.slice();
-  if(ekyc.filter?.active) allRows = allRows.filter(r=>ekycBlockPassesFilter(r.total_cons||0,r.total_comp||0));
-  if(ekyc.shopFilter?.active) allRows = allRows.filter(r=>ekycShopPassesFilter(r));
-
-  const oldShopMap={};
-  if(ekyc.oldData) parseEkycRows(ekyc.oldData).forEach(r=>{oldShopMap[r.shopcode]=r;});
-
-  // Get visible columns (same as table)
-  const visCols = getVisibleShopCols();
-  const cfg = getEkycSelTotalConfig();
-  const selLabel = [cfg.aay?'AAY':'',cfg.phh?'PHH':'',cfg.nph?'NPHH':''].filter(Boolean).join('+') || 'Sel';
-
-  // Build column definitions for PDF
-  const pdfCols = ['#','Block','Shop Code','Shop Name'];
-  if(visCols.includes('aay_cons')) pdfCols.push('AAY Cons');
-  if(visCols.includes('aay_done')) pdfCols.push('AAY Done');
-  if(visCols.includes('aay_pend')) pdfCols.push('AAY Pend');
-  if(visCols.includes('aay_pct'))  pdfCols.push('AAY %');
-  if(visCols.includes('phh_cons')) pdfCols.push('PHH Cons');
-  if(visCols.includes('phh_done')) pdfCols.push('PHH Done');
-  if(visCols.includes('phh_pend')) pdfCols.push('PHH Pend');
-  if(visCols.includes('phh_pct'))  pdfCols.push('PHH %');
-  if(visCols.includes('nph_cons')) pdfCols.push('NPHH Cons');
-  if(visCols.includes('nph_done')) pdfCols.push('NPHH Done');
-  if(visCols.includes('nph_pend')) pdfCols.push('NPHH Pend');
-  if(visCols.includes('nph_pct'))  pdfCols.push('NPHH %');
-  if(visCols.includes('tot_cons')) pdfCols.push('Considered');
-  if(visCols.includes('tot_done')) pdfCols.push('Completed');
-  if(visCols.includes('tot_pend')) pdfCols.push('Pending');
-  if(hasComp&&visCols.includes('old_pct')) pdfCols.push(ekyc.oldDate+' %');
-  if(visCols.includes('tot_pct'))  pdfCols.push(ekyc.date+' %');
-  if(hasComp&&visCols.includes('added')) pdfCols.push('Added');
-  if(visCols.includes('sel_cons')) pdfCols.push(selLabel+' Cons');
-  if(visCols.includes('sel_done')) pdfCols.push(selLabel+' Done');
-  if(visCols.includes('sel_pend')) pdfCols.push(selLabel+' Pend');
-  if(visCols.includes('sel_pct'))  pdfCols.push(selLabel+' %');
-
-  // Helper: build a row from a shop/block record
-  function buildRow(r, siStr, isBlock, blockLabel){
-    const cons=r.total_cons||0, comp=r.total_comp||0, pend=Math.max(0,cons-comp);
-    const pct=cons>0?comp/cons:0;
-    const or=oldShopMap[r.shopcode];
-    const oldPct=or&&or.total_cons>0?or.total_comp/or.total_cons:null;
-    const added=or?comp-(or.total_comp||0):null;
-    let sc=0,sd=0;
-    if(cfg.aay){sc+=r.aay_cons||0;sd+=r.aay_comp||0;}
-    if(cfg.phh){sc+=r.phh_cons||0;sd+=r.phh_comp||0;}
-    if(cfg.nph){sc+=r.nph_cons||0;sd+=r.nph_comp||0;}
-    const sPend=Math.max(0,sc-sd), sPct=sc>0?sd/sc:0;
-    const row = [siStr, blockLabel, isBlock?'':(r.shopcode||''), isBlock?'':(r.shop_name||'')];
-    if(visCols.includes('aay_cons')) row.push(String(r.aay_cons||0));
-    if(visCols.includes('aay_done')) row.push(String(r.aay_comp||0));
-    if(visCols.includes('aay_pend')) row.push(String(Math.max(0,(r.aay_cons||0)-(r.aay_comp||0))));
-    if(visCols.includes('aay_pct'))  row.push(r.aay_cons>0?fmtPct((r.aay_comp||0)/(r.aay_cons||1)):'—');
-    if(visCols.includes('phh_cons')) row.push(String(r.phh_cons||0));
-    if(visCols.includes('phh_done')) row.push(String(r.phh_comp||0));
-    if(visCols.includes('phh_pend')) row.push(String(Math.max(0,(r.phh_cons||0)-(r.phh_comp||0))));
-    if(visCols.includes('phh_pct'))  row.push(r.phh_cons>0?fmtPct((r.phh_comp||0)/(r.phh_cons||1)):'—');
-    if(visCols.includes('nph_cons')) row.push(String(r.nph_cons||0));
-    if(visCols.includes('nph_done')) row.push(String(r.nph_comp||0));
-    if(visCols.includes('nph_pend')) row.push(String(Math.max(0,(r.nph_cons||0)-(r.nph_comp||0))));
-    if(visCols.includes('nph_pct'))  row.push(r.nph_cons>0?fmtPct((r.nph_comp||0)/(r.nph_cons||1)):'—');
-    if(visCols.includes('tot_cons')) row.push(String(cons));
-    if(visCols.includes('tot_done')) row.push(String(comp));
-    if(visCols.includes('tot_pend')) row.push(String(pend));
-    if(hasComp&&visCols.includes('old_pct')) row.push(oldPct!==null?fmtPct(oldPct):'—');
-    if(visCols.includes('tot_pct'))  row.push(fmtPct(pct));
-    if(hasComp&&visCols.includes('added')) row.push(added!==null?(added>0?'+':'')+String(added):'—');
-    if(visCols.includes('sel_cons')) row.push(String(sc));
-    if(visCols.includes('sel_done')) row.push(String(sd));
-    if(visCols.includes('sel_pend')) row.push(String(sPend));
-    if(visCols.includes('sel_pct'))  row.push(fmtPct(sPct));
-    return {data:row, isBlock, pct, sPct, pendPct:pend/(cons||1), sPend, pend};
+  // Apply numeric filter if active
+  if(ekyc.filter && ekyc.filter.active){
+    allRows = allRows.filter(r=>ekycBlockPassesFilter(r.total_cons||0, r.total_comp||0));
   }
 
-  // Group by block, sort within each block (same as table)
+  const oldShopMapPrint={};
+  if(ekyc.oldData) parseEkycRows(ekyc.oldData).forEach(r=>{ oldShopMapPrint[r.shopcode]=r; });
+
+  // Group and sort same as webapp
   const blockGroups={};
-  allRows.forEach(r=>{if(!blockGroups[r.block])blockGroups[r.block]=[];blockGroups[r.block].push(r);});
-  const blockNames = Object.keys(blockGroups).sort();
+  allRows.forEach(r=>{ if(!blockGroups[r.block])blockGroups[r.block]=[]; blockGroups[r.block].push(r); });
+  const blockNames=Object.keys(blockGroups).sort();
 
-  const tableBody=[]; let si=1;
-  const {col:sortCol, dir:sortDir} = ekyc.shopSort||{col:'pend',dir:'desc'};
+  const {col,dir}=ekyc.shopSort||{col:'pend',dir:'desc'};
+  const sortLabel={'pend':'Pending','pct':'%','added':'Added','pct_old':'Old %'}[col]||col;
+  const sortDesc=`Sorted by: ${sortLabel} ${dir==='desc'?'High → Low':'Low → High'}`;
+  const title=blockFilter?`${blockFilter}`:'All Blocks';
 
+  // Filter note for PDF
+  let filterNote = '';
+  if(ekyc.filter && ekyc.filter.active){
+    const parts=[];
+    if(ekyc.filter.pctVal!==null) parts.push(`% ${ekyc.filter.pctOp==='lt'?'<':'≥'} ${ekyc.filter.pctVal}%`);
+    if(ekyc.filter.pendVal!==null) parts.push(`Pending ${ekyc.filter.pendOp==='gt'?'>':'≤'} ${ekyc.filter.pendVal}`);
+    filterNote = ` | Filter: ${parts.join(' AND ')} (${allRows.length} shops)`;
+  }
+
+  // Build autoTable rows
+  const tableBody=[];
+  let si=1;
   blockNames.forEach(blockName=>{
     const bb=ekyc.blocks.find(b=>b.block===blockName)||{};
-    const brows = buildRow(bb, String(si++), true, blockName);
-    tableBody.push(brows);
-    const sorted = sortShopsWithinBlock(blockGroups[blockName]);
-    sorted.forEach(r=>{ tableBody.push(buildRow(r, String(si++), false, repeatBlock?r.block:'')); });
+    // For filtered view, recalculate block totals from filtered rows
+    const filteredBlockRows = blockGroups[blockName] || [];
+    const bCons = filteredBlockRows.reduce((s,r)=>s+(r.total_cons||0),0);
+    const bComp = filteredBlockRows.reduce((s,r)=>s+(r.total_comp||0),0);
+    const bpend = Math.max(0, bCons - bComp);
+    const bpct = bCons>0 ? bComp/bCons : 0;
+    const bRow=[String(si++), '⬛ '+blockName,'','',
+      String(bCons), String(bComp), String(bpend)];
+    if(hasComp) bRow.push('');
+    bRow.push(fmtPct(bpct));
+    if(hasComp) bRow.push('');
+    tableBody.push({data:bRow, isBlock:true, pct:bpct});
+
+    const sorted=sortShopsWithinBlock(filteredBlockRows);
+    sorted.forEach(r=>{
+      const pend=Math.max(0,r.total_cons-r.total_comp);
+      const oldR=oldShopMapPrint[r.shopcode];
+      const oldPct=oldR&&oldR.total_cons>0?oldR.total_comp/oldR.total_cons:null;
+      const added=oldR?r.total_comp-oldR.total_comp:null;
+      const row=[String(si++), '', r.shopcode, r.shop_name,
+        String(r.total_cons), String(r.total_comp), String(pend)];
+      if(hasComp) row.push(oldPct!==null?fmtPct(oldPct):'—');
+      row.push(fmtPct(r.total_pct));
+      if(hasComp) row.push(added!==null?(added>0?'+':'')+String(added):'—');
+      tableBody.push({data:row, isBlock:false, pct:r.total_pct, oldPct, added});
+    });
   });
 
-  // PDF generation
-  const {jsPDF} = window.jspdf;
-  const orient = orientation || (pdfCols.length>10?'landscape':'portrait');
-  const doc = new jsPDF({orientation:orient,unit:'mm',format:'a4'});
+  const { jsPDF } = window.jspdf;
+  // Use user-selected orientation; default: landscape if comparison, portrait otherwise
+  const orient = orientation || (hasComp ? 'landscape' : 'portrait');
+  const doc = new jsPDF({orientation:orient, unit:'mm', format:'a4'});
 
-  const sortLabel = {'pend':'Pending','pct':'%','added':'Added','pct_old':'Old %'}[sortCol]||sortCol;
-  const sortDesc = `Sorted by: ${sortLabel} ${sortDir==='desc'?'High → Low':'Low → High'}`;
-  const filterParts=[];
-  if(ekyc.filter?.active){if(ekyc.filter.pctVal!==null)filterParts.push(`%${ekyc.filter.pctOp==='lt'?'<':'≥'}${ekyc.filter.pctVal}%`);if(ekyc.filter.pendVal!==null)filterParts.push(`Pend${ekyc.filter.pendOp==='gt'?'>':'≤'}${ekyc.filter.pendVal}`);}
-  if(ekyc.shopFilter?.active){if(ekyc.shopFilter.pctVal!==null)filterParts.push(`Shp%${ekyc.shopFilter.pctOp==='lt'?'<':'≥'}${ekyc.shopFilter.pctVal}%`);if(ekyc.shopFilter.pendVal!==null)filterParts.push(`ShpPend${ekyc.shopFilter.pendOp==='gt'?'>':'≤'}${ekyc.shopFilter.pendVal}`);}
-  const filterNote = filterParts.length?` | Filter: ${filterParts.join(' AND ')} (${allRows.length} shops)`:'';
-
-  doc.setFontSize(11); doc.setFont('helvetica','bold');
-  doc.text(`e-KYC Progress — Shop-wise — ${blockFilter||'All Blocks'}`, 10, 12);
-  doc.setFontSize(7.5); doc.setFont('helvetica','normal'); doc.setTextColor(100);
-  doc.text(`Thiruvannamalai District | As on ${ekyc.date} | ${sortDesc}${filterNote}`, 10, 18);
+  doc.setFontSize(11);
+  doc.setFont('helvetica','bold');
+  doc.text(`e-KYC Progress — Shop-wise — ${title}`, 10, 12);
+  doc.setFontSize(8);
+  doc.setFont('helvetica','normal');
+  doc.setTextColor(100);
+  const subLine = `Thiruvannamalai District | As on ${ekyc.date}${hasComp?' | Compared from: '+ekyc.oldDate:''} | ${sortDesc}${filterNote}`;
+  doc.text(subLine, 10, 18);
   doc.setTextColor(0);
 
-  // Color pct cell
-  function pctRgb(p){ const v=Math.max(0,Math.min(1,p||0)); return v>=0.9?[209,250,229]:v>=0.8?[254,243,199]:[254,226,226]; }
+  function pctRgb(p){
+    const pct=Math.max(0,Math.min(1,p||0));
+    let r,g,b;
+    if(pct<0.85){const t=pct/0.85;r=220;g=Math.round(53+t*106);b=53;}
+    else{const t=(pct-0.85)/0.15;r=Math.round(220-t*187);g=Math.round(159+t*64);b=Math.round(53-t*53);}
+    return [r,g,b];
+  }
 
-  // Find which column indices are pct-type for coloring
-  const pctColIdxs=[];
-  pdfCols.forEach((c,i)=>{ if(c.endsWith('%')||c==='AAY %'||c==='PHH %'||c==='NPHH %'||c.endsWith('Pend')) pctColIdxs.push(i); });
-  const pctValueIdxs=pdfCols.reduce((acc,c,i)=>{if(c.endsWith('%')||c==='AAY %'||c==='PHH %'||c==='NPHH %')acc.push(i);return acc;},[]);
-  const pendIdxs=pdfCols.reduce((acc,c,i)=>{if(c.endsWith('Pend')||c==='Pending')acc.push(i);return acc;},[]);
+  const cols = ['#','Block','Shop Code','Shop Name','Considered','Completed','Pending'];
+  if(hasComp) cols.push(ekyc.oldDate+' %');
+  cols.push(ekyc.date+' %');
+  if(hasComp) cols.push('Added');
 
-  const pageW = doc.internal.pageSize.getWidth();
-  const tableW = pageW - 20; // 10mm margins each side
-  // Auto-distribute column widths
-  const fixedCols = [0,1,2,3]; // #, Block, Code, Name
-  const fixW = [6, orient==='landscape'?28:22, 14, orient==='landscape'?38:28];
-  const remaining = tableW - fixW.reduce((s,v)=>s+v,0);
-  const numCols = pdfCols.length;
-  const dataCols = numCols - 4;
-  const colW = dataCols>0 ? remaining/dataCols : 10;
-  const cw = pdfCols.map((c,i)=>i<4?fixW[i]:Math.max(8,colW));
+  // Adjust column widths based on orientation
+  const isLandscape = orient === 'landscape';
+  const cw = hasComp
+    ? (isLandscape ? [7,32,16,40,14,14,12,12,12,11] : [6,28,14,35,13,13,11,11,11,10])
+    : (isLandscape ? [7,40,18,55,18,18,16,16] : [7,35,18,45,17,17,14,14]);
 
   doc.autoTable({
     startY:22,
-    head:[pdfCols],
+    head:[cols],
     body:tableBody.map(r=>r.data),
-    columnStyles:Object.fromEntries(cw.map((w,i)=>[i,{cellWidth:w,halign:i>=4?'center':'left'}])),
-    headStyles:{fillColor:[30,58,138],textColor:255,fontSize:7,fontStyle:'bold',halign:'center'},
-    bodyStyles:{fontSize:6.5,cellPadding:1.2},
-    styles:{overflow:'linebreak',lineColor:[203,213,225],lineWidth:0.15},
+    columnStyles: Object.fromEntries(cw.map((w,i)=>([i,{cellWidth:w}]))),
+    headStyles:{fillColor:[30,58,138],textColor:255,fontSize:7.5,fontStyle:'bold',halign:'center'},
+    bodyStyles:{fontSize:7,cellPadding:1.5},
+    styles:{overflow:'linebreak',lineColor:[203,213,225],lineWidth:0.2},
     willDrawCell(data){
       if(data.section!=='body') return;
-      const row = tableBody[data.row.index]; if(!row) return;
+      const row=tableBody[data.row.index];
+      if(!row) return;
       if(row.isBlock){
         data.cell.styles.fillColor=[219,234,254];
         data.cell.styles.fontStyle='bold';
         data.cell.styles.textColor=[30,58,138];
         return;
       }
-      const ci = data.column.index;
-      const cellVal = String(data.cell.raw||'');
-      // Color pct cells
-      if(pdfCols[ci]&&pdfCols[ci].endsWith('%')&&cellVal.endsWith('%')){
-        const v=parseFloat(cellVal)/100;
-        data.cell.styles.fillColor=pctRgb(v);
+      const pctCol = hasComp ? 8 : 7;
+      const oldPctCol = hasComp ? 7 : -1;
+      const addedCol = hasComp ? 9 : -1;
+      if(data.column.index===pctCol){
+        const [r,g,b]=pctRgb(row.pct);
+        data.cell.styles.fillColor=[r,g,b];
+        data.cell.styles.textColor=255;
         data.cell.styles.fontStyle='bold';
+        data.cell.styles.halign='center';
       }
-      // Color pending cells red if > 0
-      if(pdfCols[ci]&&(pdfCols[ci]==='Pending'||pdfCols[ci].endsWith('Pend'))&&+cellVal>0){
-        data.cell.styles.textColor=[220,38,38];
+      if(oldPctCol>=0 && data.column.index===oldPctCol && row.oldPct!=null){
+        const [r,g,b]=pctRgb(row.oldPct);
+        data.cell.styles.fillColor=[r,g,b];
+        data.cell.styles.textColor=255;
+        data.cell.styles.fontStyle='bold';
+        data.cell.styles.halign='center';
       }
+      if(addedCol>=0 && data.column.index===addedCol && row.added!=null){
+        data.cell.styles.textColor=row.added>0?[5,150,105]:row.added<0?[220,38,38]:[100,116,139];
+        data.cell.styles.fontStyle='bold';
+        data.cell.styles.halign='center';
+      }
+      if(data.column.index===6){
+        const pend=parseInt(data.cell.raw||0);
+        if(pend>0) data.cell.styles.textColor=[220,38,38];
+        data.cell.styles.halign='center';
+      }
+      if(data.column.index>=4) data.cell.styles.halign='center';
     },
     didDrawPage(data){
-      const pc=doc.getNumberOfPages(), pw=doc.internal.pageSize.getWidth(), ph=doc.internal.pageSize.getHeight();
-      doc.setFontSize(6.5); doc.setTextColor(150);
-      doc.text(`Page ${data.pageNumber} of ${pc}`, pw-18, ph-4);
-      doc.text('திருவண்ணாமலை மாவட்டம்', 10, ph-4);
+      const pageCount=doc.getNumberOfPages();
+      doc.setFontSize(7);
+      doc.setTextColor(150);
+      const pageW=doc.internal.pageSize.getWidth();
+      doc.text(`Page ${data.pageNumber} of ${pageCount}`,pageW-20,doc.internal.pageSize.getHeight()-5);
+      doc.text('திருவண்ணாமலை மாவட்டம்',10,doc.internal.pageSize.getHeight()-5);
       doc.setTextColor(0);
     }
   });
 
-  const fname=`eKYC_Shopwise_${(blockFilter||'AllBlocks').replace(/\s/g,'_')}_${(ekyc.date||'').replace(/\./g,'')}.pdf`;
+  const fname=`eKYC_Shopwise_${blockFilter||'AllBlocks'}_${ekyc.date.replace(/\./g,'')}.pdf`;
   doc.save(fname);
-  toast('PDF downloaded: '+fname);
+  toast('✓ PDF downloaded: '+fname);
 }
-
 
 function downloadEkycExcel(){
   if(!ekyc.blocks||!ekyc.processedRows2){toast('Generate report first',true);return;}
@@ -8934,23 +8277,22 @@ async function pdlUploadCards(input){
     const sh2Name = wb.SheetNames.find(n=>n.toLowerCase().includes('nfsa')) || wb.SheetNames[1];
     if(sh2Name && wb.Sheets[sh2Name]){
       const d2 = XLSX.utils.sheet_to_json(wb.Sheets[sh2Name], {header:1});
-      // Row 0 = headers, Row 1 = data (as confirmed from file analysis)
       let hRow2=null, dataRow2=null;
       for(const row of d2){
         const joined = row.join(' ').toLowerCase();
-        if(joined.includes('phh') && joined.includes('nphh') && joined.includes('aay')){ hRow2=row; }
+        if(joined.includes('phh') && joined.includes('nphh')){ hRow2=row; }
         else if(row.some(v=>!isNaN(+v)&&+v>1000)){ dataRow2=row; }
       }
       if(hRow2 && dataRow2){
         hRow2.forEach((h,i)=>{
-          const hh = String(h||'').toLowerCase().replace(/\s+/g,'');
+          const hh = String(h||'').toLowerCase();
           const val = +dataRow2[i]||0;
           if(hh.includes('aay') && hh.includes('card') && !hh.includes('benefic')) c.aay = val;
           else if(hh.includes('phh') && hh.includes('card') && !hh.includes('benefic') && !hh.includes('nphh')) c.phh = val;
           else if(hh.includes('nphh') && hh.includes('card') && !hh.includes('benefic')) c.nphh = val;
-          else if(hh.includes('total') && hh.includes('card') && !hh.includes('benefic') && !hh.includes('urban') && !hh.includes('rural')) c.total = val;
-          else if(hh.includes('urban') && hh.includes('card')) c.urban = val;
-          else if(hh.includes('rural') && hh.includes('card')) c.rural = val;
+          else if(hh.includes('total') && hh.includes('card') && !hh.includes('benefic')) c.total = val;
+          else if(hh.includes('urban')) c.urban = val;
+          else if(hh.includes('rural')) c.rural = val;
         });
       }
     }
@@ -9218,160 +8560,67 @@ function pdlParseBasicData(rows, format){
 async function pdlUploadOfftakeMultiple(input){
   const files = Array.from(input.files||[]);
   if(!files.length) return;
-  input.value='';
-
-  // Parse all files silently first
-  const parsed = [];
+  let loaded=0, failed=[];
   for(const file of files){
-    try{
-      const wb = await readExcel(file);
-      const sh = wb.Sheets[wb.SheetNames[0]];
-      const data = XLSX.utils.sheet_to_json(sh, {header:1});
-
-      // Get unit from header
-      let unit = 'Kg';
-      for(let i=0;i<Math.min(10,data.length);i++){
-        const t = data[i].join(' ');
-        const m = t.match(/Entitlement\((\w+)\)/);
-        if(m){ unit=m[1]; break; }
-      }
-
-      let hIdx = data.findIndex(r=>r.some&&r.some(c=>String(c||'').trim()==='#'));
-      if(hIdx===-1) hIdx = data.findIndex(r=>r.some&&r.some(c=>String(c||'').toLowerCase().includes('taluk')));
-      if(hIdx===-1) continue;
-
-      const dataRows = data.slice(hIdx+1).filter(r=>r[0]&&String(r[0]).trim()&&!isNaN(+r[0]));
-      const totalRow = data.slice(hIdx+1).find(r=>String(r[1]||'').toLowerCase().includes('total'));
-
-      const talukRows = dataRows.map(r=>({
-        sl:+r[0], taluk:String(r[1]||'').trim(),
-        entitle:+r[2]||0, allot:+r[3]||0, ob:+r[4]||0,
-        totalAllot:+r[5]||0, receipts:+r[6]||0, adj:+r[7]||0,
-        total:+r[8]||0, sales:+r[9]||0, cb:+r[10]||0,
-        advance:+r[11]||0, actualBal:+r[12]||0, offtakePct:+r[13]||0
-      }));
-
-      const district = totalRow ? {
-        entitle:+totalRow[2]||0, allot:+totalRow[3]||0, ob:+totalRow[4]||0,
-        receipts:+totalRow[6]||0, adj:+totalRow[7]||0, total:+totalRow[8]||0,
-        sales:+totalRow[9]||0, cb:+totalRow[10]||0, offtakePct:+totalRow[13]||0
-      } : null;
-
-      // Skip zero files
-      if(!district || district.entitle===0) continue;
-
-      // Try to detect commodity from entitlement value (match against Form 1 rows)
-      let detectedCommodity = pdlDetectCommodityByValue(district.entitle, unit);
-
-      parsed.push({file:file.name, unit, district, talukRows, detected:detectedCommodity});
-    }catch(e){ console.warn('Skip '+file.name+':'+e.message); }
+    try{ await pdlUploadOfftakeSingle(file); loaded++; }
+    catch(e){ failed.push(file.name.substring(0,30)+': '+e.message); }
   }
-
-  if(parsed.length===0){ toast('No valid offtake files found',true); return; }
-
-  // Show assignment dialog
-  showOfftakeAssignDialog(parsed);
-}
-
-function pdlDetectCommodityByValue(entitle, unit){
-  // Match by entitlement value against Form 1 rows (values are in raw Kg/Ltr)
-  const f1rows = pdlSheet.f1.rows;
-  if(f1rows && f1rows.length>0){
-    // Form 1 values are in MT/KL, MIS values are in Kg/Ltr — convert
-    for(const row of f1rows){
-      const f1entKg = row.entitle * 1000; // MT→Kg or KL→Ltr
-      const diff = Math.abs(f1entKg - entitle) / Math.max(f1entKg,1);
-      if(diff < 0.05) return row.name; // within 5%
-    }
-  }
-  return null; // unknown
-}
-
-function showOfftakeAssignDialog(parsedFiles){
-  const existing = document.getElementById('offtake-assign-dialog');
-  if(existing) existing.remove();
-
-  const COMMODITIES = [
-    'Rice-NPHH (M.T)', 'Rice-PHH (M.T)', 'Sugar (M.T)', 'Sugar AAY (M.T)',
-    'Wheat (M.T)', 'Kerosene (K.L)', 'Toordhall (M.T)', 'Palmoil (K.L)',
-    'AAY Rice (M.T)', 'OAP rice (M.T)', 'ANP rice (M.T)', 'Ooty tea (M.T)',
-    'Amma Salt', 'Khadi', 'Palm Jaggery', '-- Skip this file --'
-  ];
-
-  const overlay = document.createElement('div');
-  overlay.id = 'offtake-assign-dialog';
-  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px';
-
-  const dlg = document.createElement('div');
-  dlg.style.cssText = 'background:#0f172a;border:1px solid rgba(99,102,241,.5);border-radius:14px;padding:24px;max-width:700px;width:100%;max-height:80vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.8)';
-
-  dlg.innerHTML = `
-    <div style="font-size:16px;font-weight:800;color:var(--ink);margin-bottom:6px">📦 Assign Commodities to Offtake Files</div>
-    <div style="font-size:12px;color:var(--muted);margin-bottom:18px">${parsedFiles.length} file(s) loaded. Select the commodity for each file. Auto-detected where possible.</div>
-    <div id="assign-rows">
-      ${parsedFiles.map((p,i)=>{
-        const sel = COMMODITIES.map(c=>`<option value="${c}" ${p.detected===c?'selected':''}>${c}</option>`).join('');
-        const entMT = (p.district.entitle/1000).toFixed(2);
-        const salesMT = (p.district.sales/1000).toFixed(2);
-        return `<div style="display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:10px;background:rgba(255,255,255,.03);border:1px solid ${p.detected?'rgba(52,211,153,.25)':'rgba(251,191,36,.25)'};border-radius:8px;margin-bottom:8px">
-          <div>
-            <div style="font-size:12px;font-weight:600;color:${p.detected?'#34d399':'#fcd34d'}">${p.detected?'✓ Detected':'⚠ Unknown'} — ${p.file.substring(p.file.length-30)}</div>
-            <div style="font-size:11px;color:var(--muted)">Unit: ${p.unit} | Entitlement: ${entMT} MT/KL | Sales: ${salesMT} MT/KL</div>
-          </div>
-          <select id="assign-sel-${i}" style="background:rgba(15,23,42,.8);border:1px solid ${p.detected?'rgba(52,211,153,.4)':'rgba(251,191,36,.4)'};color:var(--ink);padding:6px 10px;border-radius:6px;font-size:12px;min-width:200px">
-            ${sel}
-          </select>
-        </div>`;
-      }).join('')}
-    </div>
-    <div style="display:flex;gap:8px;margin-top:16px">
-      <button class="btn" onclick="confirmOfftakeAssign(${JSON.stringify(parsedFiles).replace(/"/g,"'")})" style="flex:1;font-size:13px;padding:10px">✅ Confirm & Load All</button>
-      <button class="btn secondary" onclick="document.getElementById('offtake-assign-dialog').remove()" style="font-size:13px;padding:10px">Cancel</button>
-    </div>`;
-
-  overlay.appendChild(dlg);
-  document.body.appendChild(overlay);
-  overlay.addEventListener('click', e=>{ if(e.target===overlay) overlay.remove(); });
-}
-
-function confirmOfftakeAssign(parsedFiles){
-  let loaded=0, skipped=0;
-  parsedFiles.forEach((p,i)=>{
-    const sel = document.getElementById('assign-sel-'+i)?.value;
-    if(!sel || sel==='-- Skip this file --'){ skipped++; return; }
-    pdlSheet.offtake[sel] = {talukRows:p.talukRows, district:p.district, filename:p.file};
-    pdlUpdateF1FromOfftake(sel);
-    loaded++;
-  });
-  document.getElementById('offtake-assign-dialog').remove();
+  input.value='';
   renderPDLOfftakeGrid();
   if(pdlSheet.activeForm==='f1') pdlOpenForm('f1');
-  toast(`✓ ${loaded} commodit${loaded===1?'y':'ies'} loaded${skipped?' ('+skipped+' skipped)':''}`);
+  if(failed.length) toast(`${loaded} loaded, ${failed.length} failed`, true);
+  else toast(`✓ ${loaded} offtake file${loaded>1?'s':''} loaded`);
 }
 
 async function pdlUploadOfftakeSingle(file){
-  // Single file — show individual assign dialog
   const wb = await readExcel(file);
   const sh = wb.Sheets[wb.SheetNames[0]];
   const data = XLSX.utils.sheet_to_json(sh, {header:1});
 
-  let unit = 'Kg';
-  for(let i=0;i<Math.min(10,data.length);i++){
-    const m = data[i].join(' ').match(/Entitlement\((\w+)\)/);
-    if(m){ unit=m[1]; break; }
+  let commodity = null;
+  for(let i=0;i<Math.min(9,data.length);i++){
+    const rowText = data[i].join(' ');
+    commodity = pdlDetectCommodity(rowText);
+    if(commodity) break;
   }
+  if(!commodity) commodity = pdlDetectCommodity(file.name);
+  if(!commodity) throw new Error('Could not detect commodity — rename file to include commodity name');
 
   let hIdx = data.findIndex(r=>r.some&&r.some(c=>String(c||'').trim()==='#'));
   if(hIdx===-1) hIdx = data.findIndex(r=>r.some&&r.some(c=>String(c||'').toLowerCase().includes('taluk')));
-  if(hIdx===-1) throw new Error('Cannot find data header row');
+  if(hIdx===-1) throw new Error('Cannot find data header row in '+file.name);
 
   const dataRows = data.slice(hIdx+1).filter(r=>r[0]&&String(r[0]).trim()&&!isNaN(+r[0]));
   const totalRow = data.slice(hIdx+1).find(r=>String(r[1]||'').toLowerCase().includes('total'));
-  const talukRows = dataRows.map(r=>({sl:+r[0],taluk:String(r[1]||'').trim(),entitle:+r[2]||0,allot:+r[3]||0,ob:+r[4]||0,totalAllot:+r[5]||0,receipts:+r[6]||0,adj:+r[7]||0,total:+r[8]||0,sales:+r[9]||0,cb:+r[10]||0,advance:+r[11]||0,actualBal:+r[12]||0,offtakePct:+r[13]||0}));
-  const district = totalRow?{entitle:+totalRow[2]||0,allot:+totalRow[3]||0,ob:+totalRow[4]||0,receipts:+totalRow[6]||0,adj:+totalRow[7]||0,total:+totalRow[8]||0,sales:+totalRow[9]||0,cb:+totalRow[10]||0,offtakePct:+totalRow[13]||0}:null;
-  if(!district||district.entitle===0) throw new Error('Empty or zero data');
-  const detected = pdlDetectCommodityByValue(district.entitle, unit);
-  showOfftakeAssignDialog([{file:file.name, unit, district, talukRows, detected}]);
+
+  const talukRows = dataRows.map(r=>({
+    sl:+r[0], taluk:String(r[1]||'').trim(),
+    entitle:+r[2]||0, allot:+r[3]||0, ob:+r[4]||0,
+    totalAllot:+r[5]||0, receipts:+r[6]||0, adj:+r[7]||0,
+    total:+r[8]||0, sales:+r[9]||0, cb:+r[10]||0,
+    advance:+r[11]||0, actualBal:+r[12]||0, offtakePct:+r[13]||0
+  }));
+
+  const district = totalRow ? {
+    entitle:+totalRow[2]||0, allot:+totalRow[3]||0, ob:+totalRow[4]||0,
+    receipts:+totalRow[6]||0, adj:+totalRow[7]||0, total:+totalRow[8]||0,
+    sales:+totalRow[9]||0, cb:+totalRow[10]||0, offtakePct:+totalRow[13]||0
+  } : null;
+
+  pdlSheet.offtake[commodity] = {talukRows, district, filename:file.name};
+  pdlUpdateF1FromOfftake(commodity);
+}
+
+// Legacy single-file wrapper
+async function pdlUploadOfftake(input){
+  const file = input.files[0]; if(!file) return;
+  try{
+    await pdlUploadOfftakeSingle(file);
+    renderPDLOfftakeGrid();
+    if(pdlSheet.activeForm==='f1') pdlOpenForm('f1');
+    toast('✓ Offtake loaded: '+file.name);
+  }catch(e){ toast('Offtake upload failed: '+e.message, true); }
+  input.value='';
 }
 
 
@@ -9379,17 +8628,45 @@ function pdlUpdateF1FromOfftake(commodity){
   const o = pdlSheet.offtake[commodity];
   if(!o||!o.district) return;
   const d = o.district;
-  // commodity is now the exact Form 1 row name
-  // All MIS values in Kg/Ltr → divide by 1000 to get MT/KL
-  const div = 1000;
+  // Map commodity key to Form 1 row name
+  const nameMap = {
+    'Rice':      ['Rice-NPHH (M.T)','Rice-PHH (M.T)'], // Rice splits into PHH+NPHH
+    'AAY Rice':  'AAY Rice (M.T)',
+    'Sugar':     'Sugar (M.T)',
+    'Sugar AAY': 'Sugar AAY (M.T)',
+    'Wheat':     'Wheat (M.T)',
+    'Kerosene':  'Kerosene (K.L)',
+    'Toordhall': 'Toordhall (M.T)',
+    'Palmoil':   'Palmoil   ( K.L)',
+    'OAP Rice':  'OAP rice (M.T)',
+    'ANP Rice':  'ANP rice (M.T)',
+    'Ooty Tea':  'Ooty tea (M.T)',
+  };
+  const targetName = nameMap[commodity];
+  if(!targetName) return;
+
+  // Convert Kg → MT (÷1000), KL stays as is for Kerosene
+  const isKg = !['Kerosene','Palmoil'].includes(commodity);
+  const div = isKg ? 1000 : 1000; // MIS gives in Kg, forms need MT
   const entitle = +(d.entitle/div).toFixed(2);
   const allot   = +(d.allot/div).toFixed(2);
   const ob      = +(d.ob/div).toFixed(2);
   const lift    = +(d.receipts/div).toFixed(2);
   const offtake = +(d.sales/div).toFixed(2);
   const cb      = +(d.cb/div).toFixed(2);
-  const row = pdlSheet.f1.rows.find(r=>r.name===commodity);
-  if(row){ row.entitle=entitle; row.allot=allot; row.ob=ob; row.lift=lift; row.offtake=offtake; row.cb=cb; row.uploaded=true; }
+
+  if(Array.isArray(targetName)){
+    // Rice: single MIS row splits — we can't split PHH/NPHH from combined total
+    // Mark both rows as sourced, leave individual editing
+    pdlSheet.f1.rows.forEach(row=>{
+      if(targetName.includes(row.name)){
+        row._fromMIS = true; row._misTotal = {entitle,allot,ob,lift,offtake,cb};
+      }
+    });
+  } else {
+    const row = pdlSheet.f1.rows.find(r=>r.name===targetName);
+    if(row){ row.entitle=entitle; row.allot=allot; row.ob=ob; row.lift=lift; row.offtake=offtake; row.cb=cb; row.uploaded=true; }
+  }
 }
 
 function renderPDLOfftakeGrid(){
@@ -9541,65 +8818,19 @@ async function pdlUploadForm1(input){
     const wb = await readExcel(file);
     const sh = wb.Sheets[wb.SheetNames[0]];
     const rows = XLSX.utils.sheet_to_json(sh, {header:1});
-    // Find header row (contains 'Commodity' or 'Name of the Commodity')
-    const hIdx = rows.findIndex(r=>r.some&&r.some(c=>String(c||'').toLowerCase().includes('commodity')));
+    // Find header row
+    const hIdx = rows.findIndex(r=>r.some&&r.some(c=>String(c||'').includes('Commodity')||String(c||'').includes('commodity')));
     if(hIdx===-1){toast('Cannot find commodity column',true);return;}
     const dataRows = rows.slice(hIdx+1).filter(r=>r[0]&&String(r[0]).trim());
-
-    // Map PDL commodity names to internal names
-    const nameMap = {
-      'rice':               'Rice-NPHH (M.T)',
-      'phh rice':           'Rice-PHH (M.T)',
-      'sugar':              'Sugar (M.T)',
-      'sugar aay':          'Sugar AAY (M.T)',
-      'wheat':              'Wheat (M.T)',
-      'kerosene':           'Kerosene (K.L)',
-      'toordhall':          'Toordhall (M.T)',
-      'toordhall/\nmasoor dhall': 'Toordhall (M.T)',
-      'masoor dhall':       'Toordhall (M.T)',
-      'palmoil':            'Palmoil (K.L)',
-      'aay rice':           'AAY Rice (M.T)',
-      'oap rice':           'OAP rice (M.T)',
-      'anp rice':           'ANP rice (M.T)',
-      'ooty tea':           'Ooty tea (M.T)',
-    };
-
-    const parsed = dataRows.map(r=>{
-      const rawName = String(r[0]||'').trim().toLowerCase().replace(/\s+/g,' ');
-      // Find best match
-      let mappedName = null;
-      for(const [key, val] of Object.entries(nameMap)){
-        if(rawName.includes(key.toLowerCase())){ mappedName = val; break; }
-      }
-      if(!mappedName) mappedName = String(r[0]||'').trim(); // keep original if no match
-      return {
-        name: mappedName,
-        shops: +r[1]||0,
-        cards: +r[2]||0,
-        entitle: +r[3]||0,
-        allot:   +r[4]||0,
-        ob:      +r[5]||0,
-        lift:    +r[6]||0,
-        total:   +r[7]||0,
-        offtake: +r[8]||0,
-        cb:      +r[9]||0,
-        uploaded: true,
-      };
-    }).filter(r=>r.name && r.entitle>0);
-
-    if(parsed.length===0){toast('No valid commodity rows found',true);return;}
-
-    // Merge into existing f1.rows (update matching rows, keep others)
-    const existing = pdlSheet.f1.rows;
-    parsed.forEach(p=>{
-      const idx = existing.findIndex(e=>e.name===p.name);
-      if(idx>=0) existing[idx] = {...existing[idx], ...p};
-      else existing.push(p);
-    });
-
-    pdlSheet.f1.uploaded = true;
+    pdlSheet.f1.rows = dataRows.map(r=>({
+      name:String(r[0]||'').trim(),
+      shops:+r[1]||0, cards:+r[2]||0, entitle:+r[3]||0,
+      allot:+r[4]||0, ob:+r[5]||0, lift:+r[6]||0,
+      offtake:+r[8]||0, cb:+r[9]||0
+    })).filter(r=>r.name);
+    pdlSheet.f1.uploaded=true;
     pdlOpenForm('f1');
-    toast(`Form 1 loaded — ${parsed.length} commodities from ${file.name}`);
+    toast('Form 1 MIS data loaded — '+pdlSheet.f1.rows.length+' rows');
   }catch(e){toast('Upload failed: '+e.message,true);}
 }
 
@@ -9618,9 +8849,7 @@ const PDL_FORM_RENDERERS = {
       <h3>📦 Form 1 — Liftment, Offtake & Closing Balance <span style="margin-left:auto;font-size:11px;color:var(--muted);font-weight:400">${mon}</span></h3>
       <div class="pdl-source-box">
         <span class="pdl-source-label">📥 MIS Source</span>
-        <span style="font-size:11px;color:var(--muted);flex:1">Upload Form 1 Excel OR offtake files in Step 3. 🔵 = uploaded. ⚪ = default.</span>
-        <input type="file" id="pdl-f1-file" accept=".xlsx,.xls" style="opacity:0;position:absolute;width:0.1px;height:0.1px;overflow:hidden" onchange="pdlUploadForm1(this)">
-        <label for="pdl-f1-file" class="btn-tiny" style="background:rgba(99,102,241,.15);border-color:rgba(99,102,241,.4);color:#a5b4fc;cursor:pointer;display:inline-flex;align-items:center;gap:4px">📂 Upload Form 1 Excel</label>
+        <span style="font-size:11px;color:var(--muted);flex:1">Upload offtake files in Step 3 above. 🔵 = MIS upload. ⚪ = previous/default value.</span>
         <button class="btn-tiny" onclick="pdlExportForm1()" style="background:rgba(52,211,153,.15);border-color:rgba(52,211,153,.4);color:#6ee7b7">📥 Download Form 1</button>
       </div>
       ${!pdlSheet.basicLoaded ? '<div style="background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.3);border-radius:6px;padding:8px 12px;font-size:11px;color:#fcd34d;margin-bottom:10px">⚠ Upload Basic Data (Step 1) to get correct FPS count</div>' : ''}
@@ -10632,8 +9861,8 @@ function bnRenderInspection(){
   }
 
   const blockMap = {};
-  (r.blockStaffList||r.blockStaff||[]).forEach(b=>{
-    const name = b.designation||b.block||b.name||'Unknown';
+  (r.blockStaff||[]).forEach(b=>{
+    const name = b.designation||b.block||'Unknown';
     blockMap[name] = {target: b.target||45, inspected: b.count||0};
   });
   Object.values(blockMap).forEach(v=>{ v.shortfall = v.target - v.inspected; });
@@ -10733,114 +9962,78 @@ function bnRenderOfftake(){
 }
 
 // ── Basic Notes Downloads ────────────────────────────────────
-async function bnDownloadExcel(){
-  await tvmStyle.ensureExcelJS();
-  const wb = new ExcelJS.Workbook();
-  wb.creator = 'TVM Office Suite';
+function bnDownloadExcel(){
+  const wb = XLSX.utils.book_new();
   const mon = bnEnMonthLabel();
-  const DISTRICT = 'Thiruvannamalai District';
 
-  // ── Sheet 1: FPS Details ───────────────────────────────────────────────
+  // Sheet 1: FPS Details
   const d5 = pdlSheet.f5.data;
-  const ws1 = wb.addWorksheet('FPS Details');
-  ws1.columns = [{width:36},{width:12},{width:12},{width:12},{width:12},{width:14}];
-  tvmStyle.titleRow(ws1, `நியாய விலைக் கடைகளின் விவரம் — ${mon} — ${DISTRICT}`, 6, 1, 28);
-  tvmStyle.headerRow(ws1,
-    ['நிறுவனம்','நகர் FT','நகர் PT','கிராம FT','கிராம PT','மொத்தம்'], 2, 20);
-  const fpsData = [
-    ['கூட்டுறவுத் துறை (PoS உள்ளவை)', d5.urban_ft, d5.urban_pt, d5.rural_ft, d5.rural_pt,
-      d5.urban_ft+d5.urban_pt+d5.rural_ft+d5.rural_pt],
-    ['மகளிர் / SHG', 0, 0, d5.shg_ft, d5.shg_pt, d5.shg_ft+d5.shg_pt],
-    ['TNCSC', d5.tncsc_ft, d5.tncsc_pt, 0, 0, d5.tncsc_ft+d5.tncsc_pt],
-  ];
-  fpsData.forEach((r,i)=> tvmStyle.dataRow(ws1, r, i+3, i%2===1));
-  const fTot = [
-    'மொத்தம்', d5.urban_ft, d5.urban_pt,
-    d5.rural_ft+d5.shg_ft, d5.rural_pt+d5.shg_pt,
-    d5.urban_ft+d5.urban_pt+d5.rural_ft+d5.rural_pt+d5.shg_ft+d5.shg_pt+d5.tncsc_ft+d5.tncsc_pt
-  ];
-  tvmStyle.totalRow(ws1, fTot, 6);
+  const ws1 = XLSX.utils.aoa_to_sheet([
+    [`நியாய விலைக் கடைகளின் விவரம் — ${mon}`],
+    ['நிறுவனம்','நகர் FT','நகர் PT','கிராம FT','கிராம PT','மொத்தம்'],
+    ['கூட்டுறவுத் துறை (PoS உள்ளவை)',d5.urban_ft,d5.urban_pt,d5.rural_ft,d5.rural_pt,d5.urban_ft+d5.urban_pt+d5.rural_ft+d5.rural_pt],
+    ['மகளிர் / SHG',0,0,d5.shg_ft,d5.shg_pt,d5.shg_ft+d5.shg_pt],
+    ['TNCSC',d5.tncsc_ft,d5.tncsc_pt,0,0,d5.tncsc_ft+d5.tncsc_pt],
+    ['மொத்தம்',d5.urban_ft,d5.urban_pt,d5.rural_ft+d5.shg_ft,d5.rural_pt+d5.shg_pt,
+     d5.urban_ft+d5.urban_pt+d5.rural_ft+d5.rural_pt+d5.shg_ft+d5.shg_pt+d5.tncsc_ft+d5.tncsc_pt],
+  ]);
+  XLSX.utils.book_append_sheet(wb, ws1, 'FPS Details');
 
-  // ── Sheet 2: Cards ─────────────────────────────────────────────────────
+  // Sheet 2: Cards
   const c = pdlSheet.cards;
   const d6 = pdlSheet.f6.data;
-  const ws2 = wb.addWorksheet('Cards');
-  ws2.columns = [{width:38},{width:16}];
-  tvmStyle.titleRow(ws2, `குடும்ப அட்டைகளின் விவரம் — ${mon} — ${DISTRICT}`, 2, 1, 28);
-  tvmStyle.headerRow(ws2, ['வகை','எண்ணிக்கை'], 2, 20);
-  const cardData = [
-    ['அரிசி குடும்ப அட்டைகள் (PHH+NPHH)', pdlSheet.cardsLoaded?c.rice:d6.phh+d6.nphh],
-    ['AAY அரிசி குடும்ப அட்டைகள்',        pdlSheet.cardsLoaded?c.aay:d6.aay],
-    ['OAP அரிசி குடும்ப அட்டைகள்',        pdlSheet.cardsLoaded?c.oap:d6.oap],
-    ['ANP அரிசி குடும்ப அட்டைகள்',        pdlSheet.cardsLoaded?c.anp:d6.ap],
-    ['Police குடும்ப அட்டைகள்',           pdlSheet.cardsLoaded?c.police:d6.police],
-    ['Forest குடும்ப அட்டைகள்',           d6.forest||0],
-    ['சர்க்கரை குடும்ப அட்டைகள்',         pdlSheet.cardsLoaded?c.sugar:d6.sugar_opt],
-    ['என்.கார்டு (N.Card)',               pdlSheet.cardsLoaded?c.noComm:d6.n_cards],
-    ['கிராமப்புறம் (Rural)',               pdlSheet.cardsLoaded?c.rural:d6.rural],
-    ['நகர்ப்புறம் (Urban)',               pdlSheet.cardsLoaded?c.urban:d6.urban],
-  ];
-  cardData.forEach((r,i)=> tvmStyle.dataRow(ws2, r, i+3, i%2===1));
-  const cardTotal = pdlSheet.cardsLoaded
-    ? c.total
-    : (d6.phh+d6.nphh+d6.aay+d6.police+d6.oap+d6.ap);
-  tvmStyle.totalRow(ws2, ['மொத்தம் (Total Cards)', cardTotal], cardData.length+3);
+  const ws2 = XLSX.utils.aoa_to_sheet([
+    [`குடும்ப அட்டைகளின் விவரம் — ${mon}`],
+    ['வகை','எண்ணிக்கை'],
+    ['அரிசி குடும்ப அட்டைகள்', pdlSheet.cardsLoaded?c.rice:d6.phh+d6.nphh],
+    ['சர்க்கரை குடும்ப அட்டைகள்', pdlSheet.cardsLoaded?c.sugar:d6.sugar_opt],
+    ['AAY அரிசி குடும்ப அட்டைகள்', pdlSheet.cardsLoaded?c.aay:d6.aay],
+    ['OAP அரிசி குடும்ப அட்டைகள்', pdlSheet.cardsLoaded?c.oap:d6.oap],
+    ['ANP அரிசி குடும்ப அட்டைகள்', pdlSheet.cardsLoaded?c.anp:d6.ap],
+    ['Police குடும்ப அட்டைகள்', pdlSheet.cardsLoaded?c.police:d6.police],
+    ['Forest குடும்ப அட்டைகள்', d6.forest||0],
+    ['என்.கார்டு (N.Card)', pdlSheet.cardsLoaded?c.noComm:d6.n_cards],
+    ['மொத்தம்',''],
+    ['Rural', pdlSheet.cardsLoaded?c.rural:d6.rural],
+    ['Urban', pdlSheet.cardsLoaded?c.urban:d6.urban],
+  ]);
+  XLSX.utils.book_append_sheet(wb, ws2, 'Cards');
 
-  // ── Sheet 3: Inspection ────────────────────────────────────────────────
+  // Sheet 3: Inspection
   const r = state.results;
-  const ws3 = wb.addWorksheet('Inspection');
-  ws3.columns = [{width:6},{width:28},{width:12},{width:12},{width:12},{width:12},{width:14}];
-  tvmStyle.titleRow(ws3, `ஆய்வு விவரம் — ${mon} — ${DISTRICT}`, 7, 1, 28);
-  tvmStyle.headerRow(ws3,
-    ['#','Block','Code','Target','Inspected','Shortfall','Fine (Rs)'], 2, 20);
-  let iRow = 3;
-  let totT=0, totI=0, totF=0;
   if(r){
     const blockMap = {};
-    (r.blockStaffList||r.blockStaff||[]).forEach(b=>{
-      blockMap[b.designation||b.block||b.name||'?']={target:b.target||45,inspected:b.count||0};
-    });
-    Object.entries(blockMap).forEach(([name,b],i)=>{
-      const short = b.target - b.inspected;
-      const fine  = (bn.inspFines||{})[name]||0;
-      tvmStyle.dataRow(ws3, [i+1, name, '', b.target, b.inspected, short, fine], iRow, i%2===1);
-      // Color shortfall cell
-      if(short > 0){
-        const sc = ws3.getRow(iRow).getCell(6);
-        sc.fill = tvmStyle.fill('FFCDD2');
-        sc.font = tvmStyle.font(true,10,'B71C1C');
-      }
-      totT+=b.target; totI+=b.inspected; totF+=fine; iRow++;
-    });
+    (r.blockStaff||[]).forEach(b=>{ blockMap[b.designation||b.block||'?']={target:b.target||45,inspected:b.count||0}; });
+    const inspRows = [
+      [`ஆய்வு விவரம் — ${mon}`],
+      ['#','Block','Code','Target','Inspected','Shortfall','Fine (Rs)'],
+      ...Object.entries(blockMap).map(([name,b],i)=>[i+1,name,'',b.target,b.inspected,b.target-b.inspected,(bn.inspFines||{})[name]||0]),
+    ];
+    const totT=Object.values(blockMap).reduce((s,b)=>s+b.target,0);
+    const totI=Object.values(blockMap).reduce((s,b)=>s+b.inspected,0);
+    inspRows.push(['','மொத்தம்','',totT,totI,totT-totI,'']);
+    XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(inspRows), 'Inspection');
   }
-  tvmStyle.totalRow(ws3, ['','மொத்தம்','',totT,totI,totT-totI,totF], iRow);
 
-  // ── Sheet 4: Offtake ───────────────────────────────────────────────────
+  // Sheet 4: Offtake
   const off = pdlSheet.offtake;
   if(Object.keys(off).length>0){
-    const ws4 = wb.addWorksheet('Offtake');
-    ws4.columns = [{width:22},{width:14},{width:14},{width:10},{width:14},{width:14},{width:10},{width:12}];
-    tvmStyle.titleRow(ws4, `விற்பனை விவரம் — ${mon} — ${DISTRICT}`, 8, 1, 28);
-    tvmStyle.headerRow(ws4,
-      ['Commodity','Entitlement','Allotment','OB','Liftment','Sales','CB','Offtake %'], 2, 20);
-    let oRow = 3;
-    Object.keys(off).forEach((com,i)=>{
+    const offRows = [
+      [`விற்பனை விவரம் — ${mon}`],
+      ['Commodity','Entitlement','Allotment','OB','Liftment','Sales','CB','Offtake %'],
+    ];
+    Object.keys(off).forEach(com=>{
       const d = off[com]?.district;
       if(!d) return;
-      const div = 1000;
-      const pctStr = d.offtakePct+'%';
-      tvmStyle.dataRow(ws4,
-        [com,+(d.entitle/div).toFixed(2),+(d.allot/div).toFixed(2),+(d.ob/div).toFixed(2),
-         +(d.receipts/div).toFixed(2),+(d.sales/div).toFixed(2),+(d.cb/div).toFixed(2),pctStr],
-        oRow, i%2===1);
-      tvmStyle.pctCell(ws4, oRow, 8, pctStr);
-      oRow++;
+      const div=1000;
+      offRows.push([com,+(d.entitle/div).toFixed(2),+(d.allot/div).toFixed(2),+(d.ob/div).toFixed(2),+(d.receipts/div).toFixed(2),+(d.sales/div).toFixed(2),+(d.cb/div).toFixed(2),d.offtakePct+'%']);
     });
+    XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(offRows), 'Offtake');
   }
 
   const fname = `BasicNotes_${(pdlSheet.month||'').replace('-','')}_TVM.xlsx`;
-  await tvmStyle.save(wb, fname);
-  toast('✓ Basic Notes Excel downloaded — Professional format');
+  XLSX.writeFile(wb, fname);
+  toast('Basic Notes Excel downloaded');
 }
 
 function bnDownloadDocx(){
@@ -10876,7 +10069,7 @@ function bnDownloadDocx(){
     if(d) lines.push(`${com}: Allot=${+(d.allot/1000).toFixed(2)}, Sales=${+(d.sales/1000).toFixed(2)}, Offtake%=${d.offtakePct}%`);
   });
   if(r){
-    const bm={};(r.blockStaffList||r.blockStaff||[]).forEach(b=>{bm[b.designation||b.block||b.name||'?']={t:b.target||45,i:b.count||0};});
+    const bm={};(r.blockStaff||[]).forEach(b=>{bm[b.designation||'?']={t:b.target||45,i:b.count||0};});
     const tt=Object.values(bm).reduce((s,b)=>s+b.t,0);
     const ti=Object.values(bm).reduce((s,b)=>s+b.i,0);
     lines.push('','4. INSPECTION',`Target: ${tt}, Inspected: ${ti}, Shortfall: ${tt-ti}`);
@@ -10983,292 +10176,110 @@ function ekycBlockPassesFilter(cons, comp){
 // ============================================================
 // e-KYC Shop-wise Excel Download
 // ============================================================
-async function downloadEkycShopExcel(){
-  await tvmStyle.ensureExcelJS();
+function downloadEkycShopExcel(){
   if(!ekyc.processedRows2){ toast('Generate report first',true); return; }
   const hasComp = !!ekyc.oldData;
-  const blockFilter = document.getElementById('ekyc-block-filter')?.value||'';
-  const repeatBlock = document.getElementById('shp-repeat-block')?.checked||false;
-  const DISTRICT = 'Thiruvannamalai District';
-
-  // Get rows with all active filters
+  const blockFilter = document.getElementById('ekyc-block-filter')?.value || '';
   let rows = blockFilter ? ekyc.processedRows2.filter(r=>r.block===blockFilter) : ekyc.processedRows2.slice();
-  if(ekyc.filter?.active) rows = rows.filter(r=>ekycBlockPassesFilter(r.total_cons||0,r.total_comp||0));
-  if(ekyc.shopFilter?.active) rows = rows.filter(r=>ekycShopPassesFilter(r));
 
-  const oldMap={};
-  if(hasComp&&ekyc.oldData) parseEkycRows(ekyc.oldData).forEach(r=>{if(!oldMap[r.shopcode])oldMap[r.shopcode]=r;});
-
-  const visCols = getVisibleShopCols();
-  const cfg = getEkycSelTotalConfig();
-  const selLabel=[cfg.aay?'AAY':'',cfg.phh?'PHH':'',cfg.nph?'NPHH':''].filter(Boolean).join('+')||'Sel';
-
-  // Build column definition
-  const colDefs = [
-    {id:'sl',    label:'#',         width:6},
-    {id:'block', label:'Block',     width:22},
-    {id:'code',  label:'Shop Code', width:14},
-    {id:'name',  label:'FPS Name',  width:34},
-  ];
-  if(visCols.includes('aay_cons')) colDefs.push({id:'aay_cons',label:'AAY\nConsidered',width:12,grp:'AAY'});
-  if(visCols.includes('aay_done')) colDefs.push({id:'aay_done',label:'AAY\nDone',      width:10,grp:'AAY'});
-  if(visCols.includes('aay_pend')) colDefs.push({id:'aay_pend',label:'AAY\nPending',   width:10,grp:'AAY'});
-  if(visCols.includes('aay_pct'))  colDefs.push({id:'aay_pct', label:'AAY\n%',         width:9, grp:'AAY',isPct:true});
-  if(visCols.includes('phh_cons')) colDefs.push({id:'phh_cons',label:'PHH\nConsidered',width:12,grp:'PHH'});
-  if(visCols.includes('phh_done')) colDefs.push({id:'phh_done',label:'PHH\nDone',      width:10,grp:'PHH'});
-  if(visCols.includes('phh_pend')) colDefs.push({id:'phh_pend',label:'PHH\nPending',   width:10,grp:'PHH'});
-  if(visCols.includes('phh_pct'))  colDefs.push({id:'phh_pct', label:'PHH\n%',         width:9, grp:'PHH',isPct:true});
-  if(visCols.includes('nph_cons')) colDefs.push({id:'nph_cons',label:'NPHH\nConsidered',width:13,grp:'NPHH'});
-  if(visCols.includes('nph_done')) colDefs.push({id:'nph_done',label:'NPHH\nDone',     width:10,grp:'NPHH'});
-  if(visCols.includes('nph_pend')) colDefs.push({id:'nph_pend',label:'NPHH\nPending',  width:10,grp:'NPHH'});
-  if(visCols.includes('nph_pct'))  colDefs.push({id:'nph_pct', label:'NPHH\n%',        width:9, grp:'NPHH',isPct:true});
-  if(visCols.includes('tot_cons')) colDefs.push({id:'tot_cons',label:'Considered', width:12,grp:'Total'});
-  if(visCols.includes('tot_done')) colDefs.push({id:'tot_done',label:'Completed',  width:11,grp:'Total'});
-  if(visCols.includes('tot_pend')) colDefs.push({id:'tot_pend',label:'Pending',    width:10,grp:'Total'});
-  if(hasComp&&visCols.includes('old_pct')) colDefs.push({id:'old_pct',label:(ekyc.oldDate||'Old')+'\n%',width:11,grp:'Total',isPct:true});
-  if(visCols.includes('tot_pct'))  colDefs.push({id:'tot_pct', label:(ekyc.date||'Cur')+'\n%',width:11,grp:'Total',isPct:true});
-  if(hasComp&&visCols.includes('added')) colDefs.push({id:'added',label:'Added',width:9,grp:'Total'});
-  if(visCols.includes('sel_cons')) colDefs.push({id:'sel_cons',label:selLabel+'\nConsidered',width:14,grp:selLabel});
-  if(visCols.includes('sel_done')) colDefs.push({id:'sel_done',label:selLabel+'\nDone',      width:12,grp:selLabel});
-  if(visCols.includes('sel_pend')) colDefs.push({id:'sel_pend',label:selLabel+'\nPending',   width:12,grp:selLabel});
-  if(visCols.includes('sel_pct'))  colDefs.push({id:'sel_pct', label:selLabel+'\n%',         width:9, grp:selLabel,isPct:true});
-
-  const totalCols = colDefs.length;
-
-  // Helper: extract value for a colDef from a row
-  function getCellVal(cd, r, isBlock){
-    const or = oldMap[r.shopcode];
-    if(cd.id==='sl')    return null;
-    if(cd.id==='block') return null;
-    if(cd.id==='code')  return isBlock?'':r.shopcode||'';
-    if(cd.id==='name')  return isBlock?'':r.shop_name||'';
-    if(cd.id==='aay_cons') return r.aay_cons||0;
-    if(cd.id==='aay_done') return r.aay_comp||0;
-    if(cd.id==='aay_pend') return Math.max(0,(r.aay_cons||0)-(r.aay_comp||0));
-    if(cd.id==='aay_pct')  return r.aay_cons>0?+(r.aay_comp/r.aay_cons*100).toFixed(1)+'%':'—';
-    if(cd.id==='phh_cons') return r.phh_cons||0;
-    if(cd.id==='phh_done') return r.phh_comp||0;
-    if(cd.id==='phh_pend') return Math.max(0,(r.phh_cons||0)-(r.phh_comp||0));
-    if(cd.id==='phh_pct')  return r.phh_cons>0?+(r.phh_comp/r.phh_cons*100).toFixed(1)+'%':'—';
-    if(cd.id==='nph_cons') return r.nph_cons||0;
-    if(cd.id==='nph_done') return r.nph_comp||0;
-    if(cd.id==='nph_pend') return Math.max(0,(r.nph_cons||0)-(r.nph_comp||0));
-    if(cd.id==='nph_pct')  return r.nph_cons>0?+(r.nph_comp/r.nph_cons*100).toFixed(1)+'%':'—';
-    const cons=r.total_cons||0, comp=r.total_comp||0;
-    if(cd.id==='tot_cons') return cons;
-    if(cd.id==='tot_done') return comp;
-    if(cd.id==='tot_pend') return Math.max(0,cons-comp);
-    if(cd.id==='tot_pct')  return cons>0?+(comp/cons*100).toFixed(1)+'%':'0%';
-    if(cd.id==='old_pct')  return hasComp&&or&&or.total_cons>0?+(or.total_comp/or.total_cons*100).toFixed(1)+'%':'—';
-    if(cd.id==='added'){const a=hasComp&&or!==undefined?comp-(or.total_comp||0):null;return a!==null?(a>0?'+':'')+a:'—';}
-    let sc=0,sd=0;
-    if(cfg.aay){sc+=r.aay_cons||0;sd+=r.aay_comp||0;}
-    if(cfg.phh){sc+=r.phh_cons||0;sd+=r.phh_comp||0;}
-    if(cfg.nph){sc+=r.nph_cons||0;sd+=r.nph_comp||0;}
-    if(cd.id==='sel_cons') return sc;
-    if(cd.id==='sel_done') return sd;
-    if(cd.id==='sel_pend') return Math.max(0,sc-sd);
-    if(cd.id==='sel_pct')  return sc>0?+(sd/sc*100).toFixed(1)+'%':'—';
-    return '';
+  // Apply numeric filter if active
+  if(ekyc.filter && ekyc.filter.active){
+    rows = rows.filter(r=>ekycBlockPassesFilter(r.total_cons||0, r.total_comp||0));
   }
 
-  // Build workbook
-  const wb = new ExcelJS.Workbook();
-  wb.creator = 'TVM Office Suite';
-  const ws = wb.addWorksheet('Shop-wise eKYC');
-  ws.columns = colDefs.map(cd=>({width:cd.width}));
-
-  // Row 1: Title
-  tvmStyle.titleRow(ws,
-    `e-KYC Shop-wise Report — ${ekyc.date||''} — ${blockFilter||DISTRICT}`,
-    totalCols, 1, 30);
-
-  // Row 2: Group header (AAY / PHH / NPHH / Total spans)
-  const grpRow = ws.getRow(2);
-  grpRow.height = 18;
-  const grpColors = {AAY:'1565C0', PHH:'2E7D32', NPHH:'6A1B9A', Total:'005C5C'};
-  const grpNames = [...new Set(colDefs.map(cd=>cd.grp).filter(Boolean))];
-  // Mark first 4 fixed cols as merged label
-  {
-    const cell = grpRow.getCell(1);
-    cell.value = 'Shop Details';
-    cell.font = tvmStyle.font(true,10,'FFFFFF');
-    cell.fill = tvmStyle.fill('37474F');
-    cell.alignment = tvmStyle.center();
-    cell.border = tvmStyle.border('005C5C');
-    ws.mergeCells(2,1,2,4);
+  const oldMap = {};
+  if(hasComp && ekyc.oldData){
+    parseEkycRows(ekyc.oldData).forEach(r=>{ if(!oldMap[r.shopcode]) oldMap[r.shopcode]=r; });
   }
-  grpNames.forEach(grp=>{
-    const startIdx = colDefs.findIndex(cd=>cd.grp===grp);
-    const endIdx   = colDefs.map(cd=>cd.grp).lastIndexOf(grp);
-    if(startIdx<0) return;
-    const color = grpColors[grp]||'005C5C';
-    const cell = grpRow.getCell(startIdx+1);
-    cell.value = grp;
-    cell.font = tvmStyle.font(true,11,'FFFFFF');
-    cell.fill = tvmStyle.fill(color);
-    cell.alignment = tvmStyle.center();
-    cell.border = tvmStyle.border(color);
-    if(endIdx > startIdx) ws.mergeCells(2, startIdx+1, 2, endIdx+1);
-  });
 
-  // Row 3: Column headers
-  tvmStyle.headerRow(ws, colDefs.map(cd=>cd.label), 3, 34);
-
-  // Data rows — grouped by block
+  // Group by block (same as webapp display)
   const blockGroups={};
-  rows.forEach(r=>{if(!blockGroups[r.block])blockGroups[r.block]=[];blockGroups[r.block].push(r);});
+  rows.forEach(r=>{ if(!blockGroups[r.block])blockGroups[r.block]=[]; blockGroups[r.block].push(r); });
   const blockNames=Object.keys(blockGroups).sort();
 
-  let exRow=4; let si=1;
+  // Build header matching webapp columns: #, Block, Shop Code, FPS Name, Considered, Completed, Pending, [old%,] %, [Added]
+  const headers = ['#','Block','Shop Code','FPS Name','Considered','Completed','Pending'];
+  if(hasComp) headers.push(ekyc.oldDate+' %');
+  headers.push(ekyc.date+' %');
+  if(hasComp) headers.push('Added');
+
+  const data = [headers];
+  let si = 1;
+
+  // Filter note
+  if(ekyc.filter && ekyc.filter.active){
+    const parts=[];
+    if(ekyc.filter.pctVal!==null) parts.push(`% ${ekyc.filter.pctOp==='lt'?'<':'≥'} ${ekyc.filter.pctVal}%`);
+    if(ekyc.filter.pendVal!==null) parts.push(`Pending ${ekyc.filter.pendOp==='gt'?'>':'≤'} ${ekyc.filter.pendVal}`);
+    data.unshift([`Filter: ${parts.join(' AND ')} | ${rows.length} shops shown | Generated: ${new Date().toLocaleDateString()}`]);
+    data.unshift([`e-KYC Shop-wise Report — ${blockFilter||'All Blocks'} — As on ${ekyc.date}`]);
+    data.push([]);
+    // Re-add header after info rows
+  }
+
   blockNames.forEach(blockName=>{
-    const brows=blockGroups[blockName];
-    // Compute block aggregate
-    const bAgg={
-      total_cons:brows.reduce((s,r)=>s+(r.total_cons||0),0),
-      total_comp:brows.reduce((s,r)=>s+(r.total_comp||0),0),
-      aay_cons:brows.reduce((s,r)=>s+(r.aay_cons||0),0),
-      aay_comp:brows.reduce((s,r)=>s+(r.aay_comp||0),0),
-      phh_cons:brows.reduce((s,r)=>s+(r.phh_cons||0),0),
-      phh_comp:brows.reduce((s,r)=>s+(r.phh_comp||0),0),
-      nph_cons:brows.reduce((s,r)=>s+(r.nph_cons||0),0),
-      nph_comp:brows.reduce((s,r)=>s+(r.nph_comp||0),0),
-      shopcode:null, shop_name:null,
-    };
+    const blockRows = blockGroups[blockName];
+    const bCons = blockRows.reduce((s,r)=>s+(r.total_cons||0),0);
+    const bComp = blockRows.reduce((s,r)=>s+(r.total_comp||0),0);
+    const bPend = Math.max(0, bCons-bComp);
+    const bPct = bCons>0?(bComp/bCons*100).toFixed(1)+'%':'—';
 
-    // Block header row — teal light bg, bold
-    const blkRowObj = ws.getRow(exRow);
-    blkRowObj.height = 18;
-    colDefs.forEach((cd,ci)=>{
-      const cell = blkRowObj.getCell(ci+1);
-      if(ci===0) cell.value = si++;
-      else if(ci===1) cell.value = blockName;
-      else cell.value = getCellVal(cd, bAgg, true);
-      cell.font = tvmStyle.font(true,10,'FFFFFF');
-      cell.fill = tvmStyle.fill('005C5C');
-      cell.border = tvmStyle.border('005C5C');
-      cell.alignment = (ci===1) ? tvmStyle.left(false) : tvmStyle.center();
-      if(cd.isPct && ci>1){
-        const pStr = getCellVal(cd, bAgg, true);
-        tvmStyle.pctCell(ws, exRow, ci+1, pStr);
-        // override font to bold+color (pctCell sets its own)
-        const pc = ws.getRow(exRow).getCell(ci+1);
-        pc.font = {name:'Arial',size:10,bold:true,color:pc.font.color};
+    // Block summary row
+    const bRow = ['', blockName, '', '', bCons, bComp, bPend];
+    if(hasComp) bRow.push('');
+    bRow.push(bPct);
+    if(hasComp) bRow.push('');
+    data.push(bRow);
+
+    // Shop rows sorted same as webapp
+    const sorted = sortShopsWithinBlock(blockRows);
+    sorted.forEach(r=>{
+      const cons=r.total_cons||0, comp=r.total_comp||0, pend=Math.max(0,cons-comp);
+      const pct = cons>0?(comp/cons*100).toFixed(1)+'%':'0%';
+      const row = [si++, '', r.shopcode, r.shop_name||'', cons, comp, pend];
+      if(hasComp){
+        const or = oldMap[r.shopcode];
+        const oPct = or&&or.total_cons>0?(or.total_comp/or.total_cons*100).toFixed(1)+'%':'—';
+        row.push(oPct);
       }
-    });
-    exRow++;
-
-    // Shop rows
-    sortShopsWithinBlock(brows).forEach((r,idx)=>{
-      const shopRow = ws.getRow(exRow);
-      shopRow.height = 15;
-      colDefs.forEach((cd,ci)=>{
-        const cell = shopRow.getCell(ci+1);
-        if(ci===0) cell.value = si++;
-        else if(ci===1) cell.value = repeatBlock?r.block:'';
-        else cell.value = getCellVal(cd, r, false);
-        cell.font = tvmStyle.font(false,10,'000000');
-        cell.fill = tvmStyle.fill(idx%2===0?'FFFFFF':'F5F5F5');
-        cell.border = tvmStyle.border();
-        cell.alignment = (ci<=1||ci===3) ? tvmStyle.left(false) : tvmStyle.center();
-        if(cd.isPct){
-          tvmStyle.pctCell(ws, exRow, ci+1, getCellVal(cd,r,false));
-        }
-      });
-      exRow++;
+      row.push(pct);
+      if(hasComp){
+        const or = oldMap[r.shopcode];
+        const added = or!==undefined?comp-(or.total_comp||0):null;
+        row.push(added!==null?(added>0?'+':'')+added:'—');
+      }
+      data.push(row);
     });
   });
 
-  // Grand total row
-  const gt = {
-    total_cons:rows.reduce((s,r)=>s+(r.total_cons||0),0),
-    total_comp:rows.reduce((s,r)=>s+(r.total_comp||0),0),
-    aay_cons:rows.reduce((s,r)=>s+(r.aay_cons||0),0),
-    aay_comp:rows.reduce((s,r)=>s+(r.aay_comp||0),0),
-    phh_cons:rows.reduce((s,r)=>s+(r.phh_cons||0),0),
-    phh_comp:rows.reduce((s,r)=>s+(r.phh_comp||0),0),
-    nph_cons:rows.reduce((s,r)=>s+(r.nph_cons||0),0),
-    nph_comp:rows.reduce((s,r)=>s+(r.nph_comp||0),0),
-    shopcode:null,shop_name:null,
-  };
-  const gtRow = ws.getRow(exRow);
-  gtRow.height = 20;
-  colDefs.forEach((cd,ci)=>{
-    const cell = gtRow.getCell(ci+1);
-    if(ci===0) cell.value = '';
-    else if(ci===1) cell.value = 'மொத்தம் (Grand Total)';
-    else cell.value = getCellVal(cd, gt, true);
-    cell.font = tvmStyle.font(true,10,'FFFFFF');
-    cell.fill = tvmStyle.fill(tvmStyle.C.green);
-    cell.border = tvmStyle.border('1B5E20');
-    cell.alignment = (ci===1)?tvmStyle.left(false):tvmStyle.center();
-  });
+  // Total row
+  const totCons=rows.reduce((s,r)=>s+(r.total_cons||0),0);
+  const totComp=rows.reduce((s,r)=>s+(r.total_comp||0),0);
+  const totPend=Math.max(0,totCons-totComp);
+  const totPct=totCons>0?(totComp/totCons*100).toFixed(1)+'%':'—';
+  const totRow=['','TOTAL','','',totCons,totComp,totPend];
+  if(hasComp) totRow.push('');
+  totRow.push(totPct);
+  if(hasComp) totRow.push('');
+  data.push(totRow);
 
-  // Freeze top 3 rows + first 4 cols
-  ws.views = [{state:'frozen', xSplit:4, ySplit:3, activeCell:'E4'}];
-
-  const fname=`ekyc_shopwise_${(blockFilter||'AllBlocks').replace(/\s/g,'_')}_${(ekyc.date||'').replace(/\./g,'')}.xlsx`;
-  await tvmStyle.save(wb, fname);
-  toast('✓ eKYC Excel downloaded — Professional format');
+  const wb = XLSX.utils.book_new();
+  const ws = XLSX.utils.aoa_to_sheet(data);
+  const colWidths = [5,20,14,32,12,12,11];
+  if(hasComp) colWidths.push(11);
+  colWidths.push(12);
+  if(hasComp) colWidths.push(10);
+  ws['!cols'] = colWidths.map(w=>({wch:w}));
+  XLSX.utils.book_append_sheet(wb, ws, 'Shop-wise');
+  const fname = `ekyc_shopwise_${blockFilter||'AllBlocks'}_${(ekyc.date||'').replace(/\./g,'')}.xlsx`;
+  XLSX.writeFile(wb, fname);
+  toast('Shop-wise Excel downloaded: '+fname);
 }
 
-  const visCols = getVisibleShopCols();
-  const cfg = getEkycSelTotalConfig();
-  const selLabel=[cfg.aay?'AAY':'',cfg.phh?'PHH':'',cfg.nph?'NPHH':''].filter(Boolean).join('+')||'Sel';
-
-  // Build header row
-  const headers=['#','Block','Shop Code','FPS Name'];
-  if(visCols.includes('aay_cons')) headers.push('AAY Cons');
-  if(visCols.includes('aay_done')) headers.push('AAY Done');
-  if(visCols.includes('aay_pend')) headers.push('AAY Pend');
-  if(visCols.includes('aay_pct'))  headers.push('AAY %');
-  if(visCols.includes('phh_cons')) headers.push('PHH Cons');
-  if(visCols.includes('phh_done')) headers.push('PHH Done');
-  if(visCols.includes('phh_pend')) headers.push('PHH Pend');
-  if(visCols.includes('phh_pct'))  headers.push('PHH %');
-  if(visCols.includes('nph_cons')) headers.push('NPHH Cons');
-  if(visCols.includes('nph_done')) headers.push('NPHH Done');
-  if(visCols.includes('nph_pend')) headers.push('NPHH Pend');
-  if(visCols.includes('nph_pct'))  headers.push('NPHH %');
-  if(visCols.includes('tot_cons')) headers.push('Considered');
-  if(visCols.includes('tot_done')) headers.push('Completed');
-  if(visCols.includes('tot_pend')) headers.push('Pending');
-  if(hasComp&&visCols.includes('old_pct')) headers.push(ekyc.oldDate+' %');
-  if(visCols.includes('tot_pct'))  headers.push(ekyc.date+' %');
-  if(hasComp&&visCols.includes('added')) headers.push('Added');
-  if(visCols.includes('sel_cons')) headers.push(selLabel+' Cons');
-  if(visCols.includes('sel_done')) headers.push(selLabel+' Done');
-  if(visCols.includes('sel_pend')) headers.push(selLabel+' Pend');
-  if(visCols.includes('sel_pct'))  headers.push(selLabel+' %');
-
-  // Helper: build data row
-  function buildRow(r, siNum, isBlock, blockLabel){
-    const cons=r.total_cons||0, comp=r.total_comp||0, pend=Math.max(0,cons-comp);
-    const pct=cons>0?+(comp/cons*100).toFixed(1)+'%':'0%';
-    const or=oldMap[r.shopcode];
-    const oPct=hasComp&&or&&or.total_cons>0?+(or.total_comp/or.total_cons*100).toFixed(1)+'%':'—';
-    const added=hasComp&&or!==undefined?comp-(or.total_comp||0):null;
-    let sc=0,sd=0;
-    if(cfg.aay){sc+=r.aay_cons||0;sd+=r.aay_comp||0;}
-    if(cfg.phh){sc+=r.phh_cons||0;sd+=r.phh_comp||0;}
-    if(cfg.nph){sc+=r.nph_cons||0;sd+=r.nph_comp||0;}
-    const sPend=Math.max(0,sc-sd), sPct=sc>0?+(sd/sc*100).toFixed(1)+'%':'—';
-    const row=[siNum, blockLabel, isBlock?'':(r.shopcode||''), isBlock?'':(r.shop_name||'')];
-    if(visCols.includes('aay_cons')) row.push(r.aay_cons||0);
-    if(visCols.includes('aay_done')) row.push(r.aay_comp||0);
-    if(visCols.includes('aay_pend')) row.push(Math.max(0,(r.aay_cons||0)-(r.aay_comp||0)));
-    if(visCols.includes('aay_pct'))  row.push(r.aay_cons>0?+(r.aay_comp/r.aay_cons*100).toFixed(1)+'%':'—');
-    if(visCols.includes('phh_cons')) row.push(r.phh_cons||0);
-    if(visCols.includes('phh_done')) row.push(r.phh_comp||0);
-    if(visCols.includes('phh_pend')) row.push(Math.max(0,(r.phh_cons||0)-(r.phh_comp||0)));
-    if(visCols.includes('phh_pct'))  row.push(r.phh_cons>0?+(r.phh_comp/r.phh_cons*100).toFixed(1)+'%':'—');
-    if(visCols.includes('nph_cons')) row.push(r.nph_cons||0);
-    if(visCols.includes('nph_done')) row.push(r.nph_comp||0);
-    if(visCols.includes('nph_pend')) row.push(Math.max(0,(r.nph_cons||0)-(r.nph_comp||0)));
-    if(visCols.includes('nph_pct'))  row.push(r.nph_cons>0?+(r.nph_comp/r.nph_cons*100).toFixed(1)+'%':'—');
-    if(visCols.includes('tot_cons')) row.push(cons);
-    if(visCols.includes('tot_done')) row.push(comp);
-function printEkycBlockAbstract(catK, orientation){
+// ============================================================
+// e-KYC Block Abstract Print / PDF
+// ============================================================
+function printEkycBlockAbstract(catK){
   if(!ekyc.blocks){ toast('Generate report first',true); return; }
   const hasComp = !!ekyc.oldBlocks;
   const catDefs = [
@@ -11325,12 +10336,11 @@ function printEkycBlockAbstract(catK, orientation){
   const totPend=blocks.reduce((s,b)=>s+cat.pendF(b),0);
   const totPct=totCons>0?totComp/totCons:0;
 
-  const orient = orientation || 'portrait';
   const printWin = window.open('','_blank','width=800,height=600');
   printWin.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8">
   <title>e-KYC Block Abstract — ${cat.label}</title>
   <style>
-    @page { size: A4 ${orient}; margin: 15mm; }
+    @page { size: A4; margin: 15mm; }
     body { font-family: 'Latha','Arial Unicode MS',Arial,sans-serif; font-size:12px; color:#1e293b; margin:0; }
     .header { margin-bottom:10px; border-bottom:2px solid #1e3a8a; padding-bottom:6px; }
     table { width:100%; border-collapse:collapse; }
@@ -11371,7 +10381,7 @@ function printEkycBlockAbstract(catK, orientation){
       </tr>
     </tfoot>
   </table>
-  <script>window.onload=()=>{window.print();}<' + '/script>
+  <script>window.onload=()=>{window.print();}<\/script>
   </body></html>`);
   printWin.document.close();
 }
